@@ -1,4 +1,4 @@
-using LogStore.Domain.Models;
+using LogStore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

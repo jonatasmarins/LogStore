@@ -1,4 +1,4 @@
-namespace LogStore.Domain.Models
+namespace LogStore.Domain.Entities
 {
     public class Product
     {
@@ -9,6 +9,8 @@ namespace LogStore.Domain.Models
             Description = description;
             Value = value;
         }
+
+        public Product(long productID) { }
 
         public Product() { }
 

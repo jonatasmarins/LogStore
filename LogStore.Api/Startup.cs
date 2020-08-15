@@ -1,5 +1,8 @@
+using System;
 using LogStore.Data.Configuration;
 using LogStore.Data.Context;
+using LogStore.Domain.Commands;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +25,23 @@ namespace LogStore.Api
         public void ConfigureServices(IServiceCollection services)
         {
             DataConfig.Config(services, Configuration);
+
+            services.AddMediatR(typeof(AddOrderCommand));
+
+            services.AddSwaggerGen(s =>
+            {
+                s.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "LogStore API",
+                    Description = "Example API",
+                    Contact = new Microsoft.OpenApi.Models.OpenApiContact
+                    {
+                        Name = "Jônatas Marins",
+                        Url = new Uri("https://github.com/jonatasmarins")
+                    }
+                });
+            });
             
             services.AddControllers();
         }
@@ -41,6 +61,12 @@ namespace LogStore.Api
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwaggerUI(s =>
+            {
+                s.RoutePrefix = "swagger";
+                s.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Example");
+            });
 
             app.UseEndpoints(endpoints =>
             {

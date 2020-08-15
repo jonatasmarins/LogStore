@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LogStore.Domain.Models
+namespace LogStore.Domain.Entities
 {
     public class Order
     {
@@ -15,6 +15,7 @@ namespace LogStore.Domain.Models
         public Order() { }
 
         public long OrderID { get; set; }
+        public decimal Value { get; set; }
         public DateTime CreateDate { get; set; }
         public IList<OrderItem> Items { get; set; }
     }

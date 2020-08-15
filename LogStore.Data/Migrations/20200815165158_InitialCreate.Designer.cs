@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LogStore.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200815010025_initialCreate")]
-    partial class initialCreate
+    [Migration("20200815165158_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -18,7 +18,7 @@ namespace LogStore.Data.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.7");
 
-            modelBuilder.Entity("LogStore.Domain.Models.Order", b =>
+            modelBuilder.Entity("LogStore.Domain.Entities.Order", b =>
                 {
                     b.Property<long>("OrderID")
                         .ValueGeneratedOnAdd()
@@ -32,9 +32,33 @@ namespace LogStore.Data.Migrations
                     b.ToTable("Order");
                 });
 
-            modelBuilder.Entity("LogStore.Domain.Models.OrderItem", b =>
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderItem", b =>
                 {
                     b.Property<long>("OrderItemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("TEXT");
+
+                    b.Property<long>("OrderId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("OrderItemTypeID")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("OrderItemID");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("OrderItemTypeID");
+
+                    b.ToTable("OrderItem");
+                });
+
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderItemType", b =>
+                {
+                    b.Property<long>("OrderItemTypeID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -45,41 +69,47 @@ namespace LogStore.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<long?>("OrderID")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<long>("OrderSubItemID")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("OrderItemID");
-
-                    b.HasIndex("OrderID");
-
-                    b.ToTable("OrderItem");
-                });
-
-            modelBuilder.Entity("LogStore.Domain.Models.OrderSubItem", b =>
-                {
-                    b.Property<long>("OrderSubItemID")
+                    b.Property<int>("QuantityProduct")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(1);
 
-                    b.Property<long>("OrderItemID")
-                        .HasColumnType("INTEGER");
+                    b.HasKey("OrderItemTypeID");
 
-                    b.Property<long?>("ProductID")
-                        .HasColumnType("INTEGER");
+                    b.ToTable("OrderItemType");
 
-                    b.HasKey("OrderSubItemID");
-
-                    b.HasIndex("OrderItemID");
-
-                    b.HasIndex("ProductID");
-
-                    b.ToTable("OrderSubItem");
+                    b.HasData(
+                        new
+                        {
+                            OrderItemTypeID = 1L,
+                            Description = "Pizza grande de 8 fatias com um único sabor",
+                            Name = "Pizza Grande (8 Fatias)",
+                            QuantityProduct = 0
+                        },
+                        new
+                        {
+                            OrderItemTypeID = 2L,
+                            Description = "Pizza grande de 8 fatias com dois sabores",
+                            Name = "Pizza Grande (8 Fatias) - 2 Sabores",
+                            QuantityProduct = 2
+                        },
+                        new
+                        {
+                            OrderItemTypeID = 3L,
+                            Description = "Pizza grande de 4 fatias com um único sabor",
+                            Name = "Pizza Broto (4 Fatias)",
+                            QuantityProduct = 0
+                        },
+                        new
+                        {
+                            OrderItemTypeID = 4L,
+                            Description = "Pizza grande de 4 fatias com dois sabaores",
+                            Name = "Pizza Broto (4 Fatias) - 2 Sabores",
+                            QuantityProduct = 2
+                        });
                 });
 
-            modelBuilder.Entity("LogStore.Domain.Models.Product", b =>
+            modelBuilder.Entity("LogStore.Domain.Entities.Product", b =>
                 {
                     b.Property<long>("ProductID")
                         .ValueGeneratedOnAdd()
@@ -92,10 +122,15 @@ namespace LogStore.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<long?>("OrderItemID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<decimal>("Value")
                         .HasColumnType("TEXT");
 
                     b.HasKey("ProductID");
+
+                    b.HasIndex("OrderItemID");
 
                     b.ToTable("Product");
 
@@ -151,24 +186,26 @@ namespace LogStore.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("LogStore.Domain.Models.OrderItem", b =>
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderItem", b =>
                 {
-                    b.HasOne("LogStore.Domain.Models.Order", "Order")
+                    b.HasOne("LogStore.Domain.Entities.Order", "Order")
                         .WithMany("Items")
-                        .HasForeignKey("OrderID");
-                });
-
-            modelBuilder.Entity("LogStore.Domain.Models.OrderSubItem", b =>
-                {
-                    b.HasOne("LogStore.Domain.Models.OrderItem", "OrderItem")
-                        .WithMany("SubItems")
-                        .HasForeignKey("OrderItemID")
+                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LogStore.Domain.Models.Product", "Product")
+                    b.HasOne("LogStore.Domain.Entities.OrderItemType", "OrderItemType")
                         .WithMany()
-                        .HasForeignKey("ProductID");
+                        .HasForeignKey("OrderItemTypeID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LogStore.Domain.Entities.Product", b =>
+                {
+                    b.HasOne("LogStore.Domain.Entities.OrderItem", null)
+                        .WithMany("Products")
+                        .HasForeignKey("OrderItemID");
                 });
 #pragma warning restore 612, 618
         }

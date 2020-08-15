@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
   <ItemGroup>
-    <ProjectReference Include="..\LogStore.Data\LogStore.Data.csproj" />
+    <ProjectReference Include="..\LogStore.Data\LogStore.Data.csproj"/>
   </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="8.1.0"/>
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.1.0"/>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.5.1"/>
+  </ItemGroup>
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
-
-
 </Project>

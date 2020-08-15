@@ -1,5 +1,5 @@
 using LogStore.Data.ConfigurationBuilder;
-using LogStore.Domain.Models;
+using LogStore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace LogStore.Data.Context
@@ -8,7 +8,7 @@ namespace LogStore.Data.Context
     {
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<OrderSubItem> OrderSubItems { get; set; }
+        public DbSet<OrderItemType> OrderItemTypes { get; set; }
         public DbSet<Product> Products { get; set; }
 
         public DataContext(DbContextOptions options) : base(options) {}
@@ -17,7 +17,7 @@ namespace LogStore.Data.Context
         {
             modelBuilder.ApplyConfiguration(new OrderConfigurationBuilder());
             modelBuilder.ApplyConfiguration(new OrderItemConfigurationBuilder());
-            modelBuilder.ApplyConfiguration(new OrderSubItemConfigurationBuilder());
+            modelBuilder.ApplyConfiguration(new OrderItemTypeConfigurationBuilder());
             modelBuilder.ApplyConfiguration(new ProductConfigurationBuilder());
 
             SeedInitialData(modelBuilder);
@@ -72,127 +72,33 @@ namespace LogStore.Data.Context
                     },
                 });
 
-            // modelBuilder.Entity<Group>()
-            //     .HasData(new[]
-            //     {
-            //         new Group()
-            //         {
-            //             Active = true,
-            //             CreateDate = DateTime.Now,
-            //             Creator = "system (auto generated)",
-            //             Description = "Grupo da GGIA",
-            //             Id = 1,
-            //             LastChangeCreator = "system (auto generated)",
-            //             LastChangeDate = DateTime.Now,
-            //             Name = "G_ES5_ATENDIMENTO_ITI_GGIA"
-            //         },
-            //         new Group()
-            //         {
-            //             Active = true,
-            //             CreateDate = DateTime.Now,
-            //             Creator = "system (auto generated)",
-            //             Description = "Grupo de negócios",
-            //             Id = 2,
-            //             LastChangeCreator = "system (auto generated)",
-            //             LastChangeDate = DateTime.Now,
-            //             Name = "G_ES5_ATENDIMENTO_ITI_NEG"
-            //         },
-            //         new Group()
-            //         {
-            //             Active = true,
-            //             CreateDate = DateTime.Now,
-            //             Creator = "system (auto generated)",
-            //             Description = "Grupo da GGIA (dev)",
-            //             Id = 3,
-            //             LastChangeCreator = "system (auto generated)",
-            //             LastChangeDate = DateTime.Now,
-            //             Name = "G_ES5_ATENDIMENTO_ITI_GGIA_DEV"
-            //         },
-            //         new Group()
-            //         {
-            //             Active = true,
-            //             CreateDate = DateTime.Now,
-            //             Creator = "system (auto generated)",
-            //             Description = "Grupo de negócios (dev)",
-            //             Id = 4,
-            //             LastChangeCreator = "system (auto generated)",
-            //             LastChangeDate = DateTime.Now,
-            //             Name = "G_ES5_ATENDIMENTO_ITI_NEG_DEV"
-            //         }
-            //                 });
-            // modelBuilder.Entity<Role>()
-            //     .HasData(new[]
-            //     {
-            //         new Role()
-            //         {
-            //             Active = true,
-            //             CreateDate = DateTime.Now,
-            //             Creator = "system (auto generated)",
-            //             Description = "Role que permite acessar a ferramenta de gestão de acessos",
-            //             Id = 1,
-            //             LastChangeCreator = "system (auto generated)",
-            //             LastChangeDate = DateTime.Now,
-            //             Name = "ROLESAPI_ACESSAR"
-            //         },
-            //         new Role()
-            //         {
-            //             Active = true,
-            //             CreateDate = DateTime.Now,
-            //             Creator = "system (auto generated)",
-            //             Description = "Role que permite editar grupos",
-            //             Id = 2,
-            //             LastChangeCreator = "system (auto generated)",
-            //             LastChangeDate = DateTime.Now,
-            //             Name = "ROLESAPI_GRUPOS_EDITAR"
-            //         },
-            //         new Role()
-            //         {
-            //             Active = true,
-            //             CreateDate = DateTime.Now,
-            //             Creator = "system (auto generated)",
-            //             Description = "Role que permite editar roles",
-            //             Id = 3,
-            //             LastChangeCreator = "system (auto generated)",
-            //             LastChangeDate = DateTime.Now,
-            //             Name = "ROLESAPI_ROLES_EDITAR"
-            //         }
-            //     });
-            // modelBuilder.Entity<GroupRoleRelationship>()
-            //     .HasData(
-            //         new[]
-            //         {
-            //             // GGIA
-            //             new GroupRoleRelationship()
-            //             {
-            //                 CreateDate = DateTime.Now,
-            //                 Creator = "system (auto generated)",
-            //                 GroupId = 1,
-            //                 RoleId = 1
-            //             },
-            //             new GroupRoleRelationship()
-            //             {
-            //                 CreateDate = DateTime.Now,
-            //                 Creator = "system (auto generated)",
-            //                 GroupId = 1,
-            //                 RoleId = 2
-            //             },
-            //             // NEGÓCIO
-            //             new GroupRoleRelationship()
-            //             {
-            //                 CreateDate = DateTime.Now,
-            //                 Creator = "system (auto generated)",
-            //                 GroupId = 2,
-            //                 RoleId = 1
-            //             },
-            //             new GroupRoleRelationship()
-            //             {
-            //                 CreateDate = DateTime.Now,
-            //                 Creator = "system (auto generated)",
-            //                 GroupId = 2,
-            //                 RoleId = 3
-            //             }
-            //         }
-            //     );
+            modelBuilder.Entity<OrderItemType>()
+                .HasData(
+                    new[] {
+                        new OrderItemType() {
+                            OrderItemTypeID = 1,
+                            Name = "Pizza Grande (8 Fatias)",
+                            Description = "Pizza grande de 8 fatias com um único sabor"
+                        },
+                        new OrderItemType() {
+                            OrderItemTypeID = 2,
+                            Name = "Pizza Grande (8 Fatias) - 2 Sabores",
+                            Description = "Pizza grande de 8 fatias com dois sabores",
+                            QuantityProduct = 2
+                        },
+                        new OrderItemType() {
+                            OrderItemTypeID = 3,
+                            Name = "Pizza Broto (4 Fatias)",
+                            Description = "Pizza grande de 4 fatias com um único sabor"
+                        },
+                        new OrderItemType() {
+                            OrderItemTypeID = 4,
+                            Name = "Pizza Broto (4 Fatias) - 2 Sabores",
+                            Description = "Pizza grande de 4 fatias com dois sabaores",
+                            QuantityProduct = 2
+                        },
+                    }
+                );
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

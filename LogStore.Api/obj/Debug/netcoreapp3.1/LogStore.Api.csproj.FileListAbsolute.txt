@@ -7,6 +7,9 @@ C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\LogStore.Api.runtimeconfig.dev.json
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\LogStore.Api.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\LogStore.Api.pdb
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\MediatR.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
@@ -28,10 +31,14 @@ C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\bin\Debug\netcoreapp3.1\System.Text.Json.dll
@@ -55,6 +62,7 @@ C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\obj\Debug\netcoreapp3.1
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\obj\Debug\netcoreapp3.1\LogStore.Api.AssemblyInfoInputs.cache
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\obj\Debug\netcoreapp3.1\LogStore.Api.AssemblyInfo.cs
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\obj\Debug\netcoreapp3.1\LogStore.Api.csproj.CoreCompileInputs.cache
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\obj\Debug\netcoreapp3.1\LogStore.Api.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\obj\Debug\netcoreapp3.1\LogStore.Api.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\obj\Debug\netcoreapp3.1\LogStore.Api.RazorTargetAssemblyInfo.cache
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Api\obj\Debug\netcoreapp3.1\LogStore.Api.csproj.CopyComplete

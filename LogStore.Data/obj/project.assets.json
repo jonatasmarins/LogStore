@@ -2,6 +2,24 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "FluentValidation/9.1.2": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/FluentValidation.dll": {}
+        }
+      },
+      "MediatR/8.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.1/MediatR.dll": {}
+        }
+      },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
         "type": "package",
         "compile": {
@@ -446,6 +464,10 @@
       "Logstore.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "FluentValidation": "9.1.2",
+          "MediatR": "8.1.0"
+        },
         "compile": {
           "bin/placeholder/Logstore.Domain.dll": {}
         },
@@ -456,6 +478,39 @@
     }
   },
   "libraries": {
+    "FluentValidation/9.1.2": {
+      "sha512": "+l80lxon18PPJhLEGQGiono5vYhJHuIZUCfGPzO01EFFHOy5ZudF4WmWk+3JNCtKOMnyCwKits/BLhUlTiFsyw==",
+      "type": "package",
+      "path": "fluentvalidation/9.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fluentvalidation.9.1.2.nupkg.sha512",
+        "fluentvalidation.nuspec",
+        "lib/net461/FluentValidation.dll",
+        "lib/net461/FluentValidation.xml",
+        "lib/netstandard2.0/FluentValidation.dll",
+        "lib/netstandard2.0/FluentValidation.xml"
+      ]
+    },
+    "MediatR/8.1.0": {
+      "sha512": "KJFnA0MV83bNOhvYbjIX1iDykhwFXoQu0KV7E1SVbNA/CmO2I7SAm2Baly0eS7VJ2GwlmStLajBfeiNgTpvYzQ==",
+      "type": "package",
+      "path": "mediatr/8.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "gradient_128x128.png",
+        "lib/net461/MediatR.dll",
+        "lib/net461/MediatR.xml",
+        "lib/netstandard2.0/MediatR.dll",
+        "lib/netstandard2.0/MediatR.xml",
+        "lib/netstandard2.1/MediatR.dll",
+        "lib/netstandard2.1/MediatR.xml",
+        "mediatr.8.1.0.nupkg.sha512",
+        "mediatr.nuspec"
+      ]
+    },
     "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
       "sha512": "yuvf07qFWFqtK3P/MRkEKLhn5r2UbSpVueRziSqj0yJQIKFwG1pq9mOayK3zE5qZCTs0CbrwL9M6R8VwqyGy2w==",
       "type": "package",
@@ -1210,11 +1265,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj",
+      "projectUniqueName": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj",
       "projectName": "Logstore.Data",
-      "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj",
+      "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj",
       "packagesPath": "C:\\Users\\zupper\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\obj\\",
+      "outputPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -1235,8 +1290,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj": {
-              "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj"
+            "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj": {
+              "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj"
             }
           }
         }

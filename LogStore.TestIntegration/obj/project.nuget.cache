@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EViuUksyxWp9sK0PWUBG6+11f1D8sY/jtvVmO+4ix8G7G5nVkAsiFaI653DkGRxWS5JiZXdjSirJMBiXjj/MTg==",
+  "dgSpecHash": "Msz79aeY4VJ9CAUnXiYIPzUystJs+6ueMcfwVBFNcUAU8OwYY+7ESYGvzit88Gt2/lq9/YeECb5nlMd7Gb51Pg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\Logstore.TestIntegration.csproj",
+  "projectFilePath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\Logstore.TestIntegration.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
