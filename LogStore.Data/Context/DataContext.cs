@@ -24,6 +24,7 @@ namespace LogStore.Data.Context
             
             base.OnModelCreating(modelBuilder);
         }
+        
         private static void SeedInitialData(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Product>()
