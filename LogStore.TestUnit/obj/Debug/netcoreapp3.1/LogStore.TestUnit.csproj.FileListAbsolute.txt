@@ -1,0 +1,8 @@
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestUnit\bin\Debug\netcoreapp3.1\LogStore.TestUnit.deps.json
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestUnit\bin\Debug\netcoreapp3.1\LogStore.TestUnit.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestUnit\bin\Debug\netcoreapp3.1\LogStore.TestUnit.pdb
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestUnit\obj\Debug\netcoreapp3.1\LogStore.TestUnit.AssemblyInfoInputs.cache
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestUnit\obj\Debug\netcoreapp3.1\LogStore.TestUnit.AssemblyInfo.cs
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestUnit\obj\Debug\netcoreapp3.1\LogStore.TestUnit.csproj.CoreCompileInputs.cache
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestUnit\obj\Debug\netcoreapp3.1\LogStore.TestUnit.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestUnit\obj\Debug\netcoreapp3.1\LogStore.TestUnit.pdb

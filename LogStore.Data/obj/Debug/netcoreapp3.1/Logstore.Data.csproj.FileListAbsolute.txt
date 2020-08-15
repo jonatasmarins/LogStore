@@ -1,0 +1,15 @@
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\bin\Debug\netcoreapp3.1\Logstore.Data.deps.json
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\bin\Debug\netcoreapp3.1\Logstore.Data.runtimeconfig.json
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\bin\Debug\netcoreapp3.1\Logstore.Data.runtimeconfig.dev.json
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\bin\Debug\netcoreapp3.1\Logstore.Data.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\bin\Debug\netcoreapp3.1\Logstore.Data.pdb
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\bin\Debug\netcoreapp3.1\Logstore.Domain.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\bin\Debug\netcoreapp3.1\Logstore.Domain.pdb
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\obj\Debug\netcoreapp3.1\Logstore.Data.csprojAssemblyReference.cache
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\obj\Debug\netcoreapp3.1\Logstore.Data.AssemblyInfoInputs.cache
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\obj\Debug\netcoreapp3.1\Logstore.Data.AssemblyInfo.cs
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\obj\Debug\netcoreapp3.1\Logstore.Data.csproj.CoreCompileInputs.cache
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\obj\Debug\netcoreapp3.1\Logstore.Data.csproj.CopyComplete
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\obj\Debug\netcoreapp3.1\Logstore.Data.dll
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\obj\Debug\netcoreapp3.1\Logstore.Data.pdb
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Data\obj\Debug\netcoreapp3.1\Logstore.Data.genruntimeconfig.cache
