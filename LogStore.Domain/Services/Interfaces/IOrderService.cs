@@ -6,6 +6,6 @@ namespace LogStore.Domain.Services.Interfaces
 {
     public interface IOrderService
     {
-        Task<Order> AddOrder(AddOrderCommand command, decimal totalValue);
+        Task<Order> AddOrder(decimal totalValue);
     }
 }

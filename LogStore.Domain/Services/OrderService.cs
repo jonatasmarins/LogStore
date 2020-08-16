@@ -15,16 +15,11 @@ namespace LogStore.Domain.Services
             _uow = uow;
         }
         
-        public async Task<Order> AddOrder(AddOrderCommand command, decimal totalValue)
+        public async Task<Order> AddOrder(decimal totalValue)
         {
             Order order = new Order();
             order.CreateDate = DateTime.Now;
             order.Value = totalValue;
-
-            // foreach (var item in command.OrderItems)
-            // {
-            //      += await CalculateProductsValue(item.Products);
-            // }
 
             return await _uow.OrderRepository.Add(order);
         }

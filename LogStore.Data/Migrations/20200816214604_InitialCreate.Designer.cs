@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LogStore.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20200816201454_InitialCreate")]
+    [Migration("20200816214604_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -325,7 +325,7 @@ namespace LogStore.Data.Migrations
                         {
                             UserID = 1L,
                             AddressID = 1L,
-                            DateCreate = new DateTime(2020, 8, 16, 17, 14, 54, 563, DateTimeKind.Local).AddTicks(7051),
+                            DateCreate = new DateTime(2020, 8, 16, 18, 46, 4, 524, DateTimeKind.Local).AddTicks(6364),
                             Email = "jose@aparecido.com",
                             Name = "Jose Aparecido",
                             Phone = "19996969999"
@@ -334,7 +334,7 @@ namespace LogStore.Data.Migrations
                         {
                             UserID = 2L,
                             AddressID = 2L,
-                            DateCreate = new DateTime(2020, 8, 16, 17, 14, 54, 565, DateTimeKind.Local).AddTicks(2607),
+                            DateCreate = new DateTime(2020, 8, 16, 18, 46, 4, 527, DateTimeKind.Local).AddTicks(3380),
                             Email = "Maria@rita.com",
                             Name = "Maria Rita",
                             Phone = "19996969991"

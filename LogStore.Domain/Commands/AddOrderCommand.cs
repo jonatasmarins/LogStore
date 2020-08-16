@@ -1,13 +1,14 @@
 using System;
 using System.Collections.Generic;
 using LogStore.Domain.Entities;
-using LogStore.Domain.Models;
+using LogStore.Domain.Models.Request;
+using LogStore.Domain.Models.Response;
 using LogStore.Domain.Shared;
 using MediatR;
 
 namespace LogStore.Domain.Commands
 {
-    public class AddOrderCommand : IRequest<IResultResponse<Order>>
+    public class AddOrderCommand : IRequest<IResultResponse<AddOrderResponse>>
     {
         public AddOrderCommand()
         {

@@ -7,6 +7,12 @@ namespace LogStore.Domain.Entities
             
         }
 
+        public OrderAddress(long orderID, long addressID)
+        {
+            OrderID = orderID;
+            AddressID = addressID;
+        }
+
         public long OrderAddressID { get; set; }
         
         public long OrderID { get; set; }

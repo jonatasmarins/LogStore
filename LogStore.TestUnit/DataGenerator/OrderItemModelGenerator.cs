@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using LogStore.Domain.Models;
+using LogStore.Domain.Models.Request;
 
 namespace LogStore.TestUnit.DataGenerator
 {

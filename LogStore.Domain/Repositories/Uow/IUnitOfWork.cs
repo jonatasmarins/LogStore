@@ -9,6 +9,9 @@ namespace LogStore.Domain.Repositories.Uow
         IOrderItemRepository OrderItemRepository { get; }
         IOrderItemTypeRepository OrderItemTypeRepository { get; }
         IProductRepository ProductRepository { get; }
+        IOrderUserRepository OrderUserRepository { get; }
+        IAddressRepository AddressRepository { get; }
+        IOrderAddressRepository OrderAddressRepository { get; }
 
         Task<int> SaveChange();
     }

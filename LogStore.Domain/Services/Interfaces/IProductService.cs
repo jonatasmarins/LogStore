@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using LogStore.Domain.Models;
+using LogStore.Domain.Models.Request;
 
 namespace LogStore.Domain.Services.Interfaces
 {

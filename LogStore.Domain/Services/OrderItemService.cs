@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using LogStore.Domain.Entities;
 using LogStore.Domain.Models;
+using LogStore.Domain.Models.Request;
 using LogStore.Domain.Repositories.Uow;
 using LogStore.Domain.Services.Interfaces;
 

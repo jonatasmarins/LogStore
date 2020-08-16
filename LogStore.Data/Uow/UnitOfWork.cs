@@ -49,6 +49,30 @@ namespace LogStore.Data.Uow
             }
         }
 
+        public IOrderUserRepository OrderUserRepository
+        {
+            get
+            {
+                return new OrderUserRepository(context);
+            }
+        }
+
+        public IAddressRepository AddressRepository
+        {
+            get
+            {
+                return new AddressRepository(context);
+            }
+        }
+
+        public IOrderAddressRepository OrderAddressRepository
+        {
+            get
+            {
+                return new OrderAddressRepository(context);
+            }
+        }
+
         protected virtual void Dispose(bool disposing)
         {
             if (!this.disposed)

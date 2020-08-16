@@ -11,10 +11,10 @@ namespace LogStore.Data.Context
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<OrderItemType> OrderItemTypes { get; set; }
         public DbSet<Product> Products { get; set; }
-        // public DbSet<Address> Addresses { get; set; }
-        // public DbSet<User> Users { get; set; }
-        // public DbSet<OrderAddress> OrderAddresses { get; set; }
-        // public DbSet<OrderUser> OrderUsers { get; set; }
+        public DbSet<Address> Addresses { get; set; }
+        public DbSet<User> Users { get; set; }
+        public DbSet<OrderAddress> OrderAddresses { get; set; }
+        public DbSet<OrderUser> OrderUsers { get; set; }
 
 
         public DataContext(DbContextOptions options) : base(options) {}

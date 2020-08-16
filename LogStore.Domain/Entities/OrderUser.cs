@@ -6,6 +6,12 @@ namespace LogStore.Domain.Entities
         {
             
         }
+
+        public OrderUser(long orderID, long userID)
+        {
+            OrderID = orderID;
+            UserID = userID;
+        }
         
         public long OrderUserID { get; set; }
         public long OrderID { get; set; }

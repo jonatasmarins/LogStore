@@ -1,7 +1,5 @@
-using System.Collections.Generic;
 using LogStore.Domain.Commands;
-using LogStore.Domain.Models;
-using LogStore.Domain.Repositories;
+using LogStore.Domain.Models.Request;
 using LogStore.Domain.Repositories.Uow;
 using LogStore.Domain.Validators;
 using Moq;
@@ -82,12 +80,6 @@ namespace LogStore.TestUnit.Validators
 
             Assert.False(result.IsValid);
         }
-
-        // [Fact]
-        // public void ItShouldSuccessWhenCalculateValueProducts()
-        // {
-        //     Assert.False(true);
-        // }
 
         [Fact]
         public void ItShouldSuccess()

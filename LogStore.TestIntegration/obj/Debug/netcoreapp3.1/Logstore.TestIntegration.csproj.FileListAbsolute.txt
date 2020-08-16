@@ -6,3 +6,4 @@ C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestIntegration\obj\Debug\n
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestIntegration\obj\Debug\netcoreapp3.1\Logstore.TestIntegration.csproj.CoreCompileInputs.cache
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestIntegration\obj\Debug\netcoreapp3.1\Logstore.TestIntegration.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestIntegration\obj\Debug\netcoreapp3.1\Logstore.TestIntegration.pdb
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.TestIntegration\obj\Debug\netcoreapp3.1\Logstore.TestIntegration.csprojAssemblyReference.cache

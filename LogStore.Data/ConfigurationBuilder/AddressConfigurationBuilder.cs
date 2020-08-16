@@ -12,10 +12,10 @@ namespace LogStore.Data.ConfigurationBuilder
 
             builder.Property(x => x.AddressID).ValueGeneratedOnAdd();
 
-            // builder.Property(x => x.City).IsRequired();
-            // builder.Property(x => x.Neighborhood).IsRequired();
-            // builder.Property(x => x.Number).IsRequired();
-            // builder.Property(x => x.Street).IsRequired();
+            builder.Property(x => x.City).IsRequired();
+            builder.Property(x => x.Neighborhood).IsRequired();
+            builder.Property(x => x.Number).IsRequired();
+            builder.Property(x => x.Street).IsRequired();
         }
     }
 }

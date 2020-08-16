@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace LogStore.Domain.Models
+namespace LogStore.Domain.Models.Request
 {
     public class OrderItemModel
     {

@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
-using LogStore.Domain.Commands;
 using LogStore.Domain.Entities;
-using LogStore.Domain.Models;
+using LogStore.Domain.Models.Request;
 
 namespace LogStore.Domain.Services.Interfaces
 {

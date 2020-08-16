@@ -16,7 +16,10 @@ namespace LogStore.Data.Configuration
             services.AddTransient<IOrderRepository, OrderRepository>();
             services.AddTransient<IOrderItemRepository, OrderItemRepository>();
             services.AddTransient<IOrderItemTypeRepository, OrderItemTypeRepository>();
+            services.AddTransient<IOrderUserRepository, OrderUserRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IAddressRepository, AddressRepository>();
+            services.AddTransient<IOrderAddressRepository, OrderAddressRepository>();
 
             services.AddDbContext<DataContext>(builder =>
             {

@@ -6,8 +6,8 @@ namespace LogStore.Domain.Validators
     public class AddressValidator: AbstractValidator<Address>
     {
         private const int QTD_MAX_ITEM = 10;
-        public string MessageNumberInvalid = "O Número não pode ser negativo ou zero";
-        public string MessageValueRequired = "O {0} é obrigatório";
+        public string MessageNumberInvalid = "Número não pode ser negativo ou zero";
+        public string MessageValueRequired = "{0} é obrigatório";
 
         public AddressValidator()
         {            

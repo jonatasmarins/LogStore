@@ -18,8 +18,21 @@ namespace LogStore.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpPost]
+        [HttpPost("/Order")]
         public async Task<IActionResult> Add([FromBody] AddOrderCommand command)
+        {
+            var response = await _mediator.Send(command);
+            
+            if (response.Errors.Any())
+            {
+                return BadRequest(response.Errors);
+            }
+
+            return Response(response);
+        }
+
+        [HttpPost("/Order/WihtOutUser")]
+        public async Task<IActionResult> Add([FromBody] AddOrderWithOutUserCommand command)
         {
             var response = await _mediator.Send(command);
             

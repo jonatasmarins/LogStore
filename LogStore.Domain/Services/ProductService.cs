@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using LogStore.Domain.Models;
 using LogStore.Domain.Repositories.Uow;
 using LogStore.Domain.Extensions;
 using LogStore.Domain.Services.Interfaces;
+using LogStore.Domain.Models.Request;
 
 namespace LogStore.Domain.Services
 {

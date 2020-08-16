@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using LogStore.Domain.Commands;
 using LogStore.Domain.Entities;
 using LogStore.Domain.Handlers;
-using LogStore.Domain.Models;
+using LogStore.Domain.Models.Request;
 using LogStore.Domain.Repositories.Uow;
 using LogStore.Domain.Services.Interfaces;
 using LogStore.Domain.Validators;
@@ -23,6 +23,7 @@ namespace LogStore.TestUnit.Handlers
         private readonly Mock<IOrderService> _orderService;
         private readonly Mock<IOrderItemService> _orderItemService;
         private readonly Mock<IProductService> _productService;
+        private readonly Mock<IOrderUserService> _orderUserService;
 
         public AddOrderHandlerTest(ITestOutputHelper output)
         {
@@ -33,12 +34,14 @@ namespace LogStore.TestUnit.Handlers
             _orderService = new Mock<IOrderService>();
             _orderItemService = new Mock<IOrderItemService>();
             _productService = new Mock<IProductService>();
+            _orderUserService = new Mock<IOrderUserService>();
 
             _handler = new AddOrderHandler(
                 _uow.Object, 
                 _orderService.Object,
                 _orderItemService.Object,
-                _productService.Object
+                _productService.Object,
+                _orderUserService.Object
             );
         }
 
@@ -49,7 +52,10 @@ namespace LogStore.TestUnit.Handlers
             _uow.Setup(x => x.OrderRepository.Add(It.IsAny<Order>())).ReturnsAsync(OrderRepositoryFake.OrderValid());
             _uow.Setup(x => x.ProductRepository.GetProductById(It.IsAny<long>())).ReturnsAsync(ProductRepositoryFake.GetById());
             
+            _orderService.Setup(x => x.AddOrder(It.IsAny<decimal>())).ReturnsAsync(OrderRepositoryFake.OrderValid());
+            
             AddOrderCommand command = new AddOrderCommand();
+            command.UserID = 1;
             command.OrderItems.Add(new OrderItemModel() {
                 Description = "",
                 OrderItemTypeID = 1,

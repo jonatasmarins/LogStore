@@ -265,12 +265,12 @@ namespace LogStore.Data.Migrations
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "UserID", "AddressID", "DateCreate", "Email", "Name", "Phone" },
-                values: new object[] { 1L, 1L, new DateTime(2020, 8, 16, 17, 14, 54, 563, DateTimeKind.Local).AddTicks(7051), "jose@aparecido.com", "Jose Aparecido", "19996969999" });
+                values: new object[] { 1L, 1L, new DateTime(2020, 8, 16, 18, 46, 4, 524, DateTimeKind.Local).AddTicks(6364), "jose@aparecido.com", "Jose Aparecido", "19996969999" });
 
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "UserID", "AddressID", "DateCreate", "Email", "Name", "Phone" },
-                values: new object[] { 2L, 2L, new DateTime(2020, 8, 16, 17, 14, 54, 565, DateTimeKind.Local).AddTicks(2607), "Maria@rita.com", "Maria Rita", "19996969991" });
+                values: new object[] { 2L, 2L, new DateTime(2020, 8, 16, 18, 46, 4, 527, DateTimeKind.Local).AddTicks(3380), "Maria@rita.com", "Maria Rita", "19996969991" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderAddress_AddressID",
