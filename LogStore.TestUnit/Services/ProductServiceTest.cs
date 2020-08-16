@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
-using LogStore.Domain.Entities;
-using LogStore.Domain.Repositories;
 using LogStore.Domain.Repositories.Uow;
+using LogStore.Domain.Services;
 using LogStore.Domain.Services.Interfaces;
 using LogStore.TestUnit.DataGenerator;
 using LogStore.TestUnit.Factories;

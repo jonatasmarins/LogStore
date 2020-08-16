@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 using LogStore.Domain.Models;
 using LogStore.Domain.Repositories.Uow;
 using LogStore.Domain.Extensions;
+using LogStore.Domain.Services.Interfaces;
 
-namespace LogStore.Domain.Services.Interfaces
+namespace LogStore.Domain.Services
 {
     public class ProductService : IProductService
     {

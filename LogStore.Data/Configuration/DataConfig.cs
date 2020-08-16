@@ -20,15 +20,6 @@ namespace LogStore.Data.Configuration
 
             services.AddDbContext<DataContext>(builder =>
             {
-                // var hostname = configuration["POSTGRES_DATABASE_ADDRESS"];
-                // var database = configuration["POSTGRES_DATABASE"];
-                // var username = configuration["POSTGRES_USER"];
-                // var password = configuration["POSTGRES_PASSWORD"];
-                // builder.UseNpgsql($"Host={hostname};Database={database};Username={username};Password={password}");
-                // builder.UseNpgsql($"Host={hostname};Database={database};Username={username};Password={password}", builder =>
-                // {
-                //     builder.MigrationsAssembly("Roles.Api");
-                // });
                 builder.UseSqlite("Data Source=LogStoreDbTest.db");
             });
         }

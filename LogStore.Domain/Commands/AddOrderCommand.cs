@@ -13,6 +13,8 @@ namespace LogStore.Domain.Commands
         {
             OrderItems = new List<OrderItemModel>();
         }
+
+        public long UserID { get; set; }
         public IList<OrderItemModel> OrderItems { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace LogStore.Data.ConfigurationBuilder
     {
         public void Configure(EntityTypeBuilder<OrderSubItem> builder)
         {
-            builder.ToTable("OrderItemType");
+            builder.ToTable("OrderSubItem");
 
             builder.Property(x => x.OrderSubItemID).ValueGeneratedOnAdd();
 

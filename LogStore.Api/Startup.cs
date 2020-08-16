@@ -2,6 +2,7 @@ using System;
 using LogStore.Data.Configuration;
 using LogStore.Data.Context;
 using LogStore.Domain.Commands;
+using LogStore.Domain.Configuration;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -25,6 +26,8 @@ namespace LogStore.Api
         public void ConfigureServices(IServiceCollection services)
         {
             DataConfig.Config(services, Configuration);
+
+            DomainConfiguration.Config(services, Configuration);
 
             services.AddMediatR(typeof(AddOrderCommand));
 

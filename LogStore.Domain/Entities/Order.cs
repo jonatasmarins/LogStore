@@ -22,5 +22,11 @@ namespace LogStore.Domain.Entities
         public decimal Value { get; set; }
         public DateTime CreateDate { get; set; }
         public IList<OrderItem> Items { get; set; }
+
+        // public long OrderAddressID { get; set; }
+        // public OrderAddress OrderAddress { get; set; }
+
+        // public long OrderUserID { get; set; }
+        // public OrderUser OrderUser { get; set; }
     }
 }

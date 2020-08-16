@@ -1,3 +1,4 @@
+using System;
 using LogStore.Data.ConfigurationBuilder;
 using LogStore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
@@ -10,15 +11,25 @@ namespace LogStore.Data.Context
         public DbSet<OrderItem> OrderItems { get; set; }
         public DbSet<OrderItemType> OrderItemTypes { get; set; }
         public DbSet<Product> Products { get; set; }
+        // public DbSet<Address> Addresses { get; set; }
+        // public DbSet<User> Users { get; set; }
+        // public DbSet<OrderAddress> OrderAddresses { get; set; }
+        // public DbSet<OrderUser> OrderUsers { get; set; }
+
 
         public DataContext(DbContextOptions options) : base(options) {}
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new OrderItemTypeConfigurationBuilder());
             modelBuilder.ApplyConfiguration(new OrderConfigurationBuilder());
             modelBuilder.ApplyConfiguration(new OrderItemConfigurationBuilder());
-            modelBuilder.ApplyConfiguration(new OrderItemTypeConfigurationBuilder());
+            modelBuilder.ApplyConfiguration(new OrderSubItemConfigurationBuilder());
             modelBuilder.ApplyConfiguration(new ProductConfigurationBuilder());
+            modelBuilder.ApplyConfiguration(new AddressConfigurationBuilder());
+            modelBuilder.ApplyConfiguration(new UserConfigurationBuilder());
+            modelBuilder.ApplyConfiguration(new OrderAddressConfigurationBuilder());
+            modelBuilder.ApplyConfiguration(new OrderUserConfigurationBuilder());
 
             SeedInitialData(modelBuilder);
             
@@ -100,11 +111,50 @@ namespace LogStore.Data.Context
                         },
                     }
                 );
+
+            modelBuilder.Entity<Address>()
+                .HasData(
+                    new[] {
+                        new Address() {
+                            AddressID = 1,
+                            City = "Indaiatuba",
+                            Neighborhood = "Montreal",
+                            Number = 5000,
+                            Street = "Rua Monte Royal"
+                        },
+                        new Address() {
+                            AddressID = 2,
+                            City = "Campinas",
+                            Neighborhood = "Nova Veneza",
+                            Number = 3555,
+                            Street = "Rua Palmeiras"
+                        }
+                    }
+                );
+            
+            modelBuilder.Entity<User>()
+                .HasData(new[] {
+                    new User() {
+                        UserID = 1,
+                        DateCreate = DateTime.Now,
+                        Email = "jose@aparecido.com",
+                        Name = "Jose Aparecido",
+                        Phone = "19996969999",
+                        AddressID = 1
+                    },
+                    new User() {
+                        UserID = 2,
+                        DateCreate = DateTime.Now,
+                        Email = "Maria@rita.com",
+                        Name = "Maria Rita",
+                        Phone = "19996969991",
+                        AddressID = 2
+                    }
+                });
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
         }
-
     }
 }

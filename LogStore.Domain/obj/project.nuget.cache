@@ -1,11 +1,16 @@
 {
   "version": 2,
-  "dgSpecHash": "BVd63ySu9+yMI89WqwK3fRFGHIrXrOAvbtZzjG1BkrKypcz28wfE9k+FsQ55BYL7z4R+SNPmS96SV1PoCFZf3g==",
+  "dgSpecHash": "aJHnekgUxdCalFaKfjr0yR9a1EOqkKcOjOdwJEzv+5ZZI+doyVof6mfEefa+aDOiyxcvzixONWEw86781VJdAQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj",
+  "projectFilePath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zupper\\.nuget\\packages\\fluentvalidation\\9.1.2\\fluentvalidation.9.1.2.nupkg.sha512",
-    "C:\\Users\\zupper\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512"
+    "C:\\Users\\zupper\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512",
+    "C:\\Users\\zupper\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.7\\microsoft.extensions.configuration.3.1.7.nupkg.sha512",
+    "C:\\Users\\zupper\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.7\\microsoft.extensions.configuration.abstractions.3.1.7.nupkg.sha512",
+    "C:\\Users\\zupper\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\3.1.7\\microsoft.extensions.dependencyinjection.3.1.7.nupkg.sha512",
+    "C:\\Users\\zupper\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\3.1.7\\microsoft.extensions.dependencyinjection.abstractions.3.1.7.nupkg.sha512",
+    "C:\\Users\\zupper\\.nuget\\packages\\microsoft.extensions.primitives\\3.1.7\\microsoft.extensions.primitives.3.1.7.nupkg.sha512"
   ],
   "logs": []
 }

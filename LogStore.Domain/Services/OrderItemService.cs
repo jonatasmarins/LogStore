@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using LogStore.Domain.Commands;
 using LogStore.Domain.Entities;
 using LogStore.Domain.Models;
 using LogStore.Domain.Repositories.Uow;
+using LogStore.Domain.Services.Interfaces;
 
-namespace LogStore.Domain.Services.Interfaces
+namespace LogStore.Domain.Services
 {
     public class OrderItemService : IOrderItemService
     {

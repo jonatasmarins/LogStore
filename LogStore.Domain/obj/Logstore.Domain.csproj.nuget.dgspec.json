@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj": {}
+    "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj": {
+    "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj",
-        "projectName": "Logstore.Domain",
-        "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj",
+        "projectName": "LogStore.Domain",
+        "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj",
         "packagesPath": "C:\\Users\\zupper\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\obj\\",
         "projectStyle": "PackageReference",
@@ -50,6 +50,14 @@
             "MediatR": {
               "target": "Package",
               "version": "[8.1.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.1.7, )"
             }
           },
           "imports": [
