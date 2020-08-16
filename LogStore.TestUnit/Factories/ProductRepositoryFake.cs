@@ -33,7 +33,7 @@ namespace LogStore.TestUnit.Factories
 
                 case 3: {
                     product.ProductID = 3;
-                    product.Value = 45.50M;
+                    product.Value = 42.50M;
                 } break;
 
                 case 4: {

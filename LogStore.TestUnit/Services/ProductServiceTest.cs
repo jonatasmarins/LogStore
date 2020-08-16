@@ -30,13 +30,13 @@ namespace LogStore.TestUnit.Services
         {
             foreach (var item in orderItemModel.OrderItemModel.Products)
             {
-                _uow.Setup(x => x.ProductRepository.GetProductById(It.IsAny<long>())).ReturnsAsync(ProductRepositoryFake.GetProduct(item));
+                _uow.Setup(x => x.ProductRepository.GetProductById(item)).ReturnsAsync(ProductRepositoryFake.GetProduct(item));
             }
 
             var totalValue = await _productService.CalculateOrderItemTotalValue(orderItemModel.OrderItemModel);
 
             _output.WriteLine($"Valor Total calculado: {totalValue}");
-            _output.WriteLine($"Valor Total: {totalValue}");
+            _output.WriteLine($"Valor Total: {orderItemModel.TotalValue}");
 
             Assert.Equal(orderItemModel.TotalValue, totalValue);
         }

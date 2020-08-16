@@ -461,7 +461,7 @@
           "lib/netcoreapp3.0/System.Text.Json.dll": {}
         }
       },
-      "LogStore.Domain/1.0.0": {
+      "Logstore.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -469,10 +469,10 @@
           "MediatR": "8.1.0"
         },
         "compile": {
-          "bin/placeholder/LogStore.Domain.dll": {}
+          "bin/placeholder/Logstore.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LogStore.Domain.dll": {}
+          "bin/placeholder/Logstore.Domain.dll": {}
         }
       }
     }
@@ -1243,15 +1243,15 @@
         "version.txt"
       ]
     },
-    "LogStore.Domain/1.0.0": {
+    "Logstore.Domain/1.0.0": {
       "type": "project",
-      "path": "../LogStore.Domain/LogStore.Domain.csproj",
-      "msbuildProject": "../LogStore.Domain/LogStore.Domain.csproj"
+      "path": "../LogStore.Domain/Logstore.Domain.csproj",
+      "msbuildProject": "../LogStore.Domain/Logstore.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "LogStore.Domain >= 1.0.0",
+      "Logstore.Domain >= 1.0.0",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.7",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.7",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.7"
@@ -1265,11 +1265,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\LogStore.Data.csproj",
-      "projectName": "LogStore.Data",
-      "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\LogStore.Data.csproj",
+      "projectUniqueName": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj",
+      "projectName": "Logstore.Data",
+      "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj",
       "packagesPath": "C:\\Users\\zupper\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\obj\\",
+      "outputPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -1290,8 +1290,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj": {
-              "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj"
+            "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj": {
+              "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj"
             }
           }
         }

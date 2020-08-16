@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Yt/mRTRJrcS7/x8qNb1m4Ei1I/C8QO3HyaEzWvf1KuI17qBNaRWXRCfopvq4RLykJjHOHU4svYN8bQZppAIKaw==",
+  "dgSpecHash": "BVd63ySu9+yMI89WqwK3fRFGHIrXrOAvbtZzjG1BkrKypcz28wfE9k+FsQ55BYL7z4R+SNPmS96SV1PoCFZf3g==",
   "success": true,
-  "projectFilePath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj",
+  "projectFilePath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zupper\\.nuget\\packages\\fluentvalidation\\9.1.2\\fluentvalidation.9.1.2.nupkg.sha512",
     "C:\\Users\\zupper\\.nuget\\packages\\mediatr\\8.1.0\\mediatr.8.1.0.nupkg.sha512"

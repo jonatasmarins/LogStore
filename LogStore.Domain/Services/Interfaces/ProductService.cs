@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using LogStore.Domain.Models;
 using LogStore.Domain.Repositories.Uow;
+using LogStore.Domain.Extensions;
 
 namespace LogStore.Domain.Services.Interfaces
 {
@@ -34,9 +35,9 @@ namespace LogStore.Domain.Services.Interfaces
             {
                 var product = await _uow.ProductRepository.GetProductById(productID);
 
-                total += orderItem.Products.Count > 1
+                total += (orderItem.Products.Count > 1
                     ? (product.Value / 2)
-                    : product.Value;
+                    : product.Value).TruncateDecimal(2);
             }
 
             return total;
