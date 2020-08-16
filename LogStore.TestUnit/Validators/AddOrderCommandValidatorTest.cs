@@ -69,9 +69,7 @@ namespace LogStore.TestUnit.Validators
                 {
                     Description = "",
                     OrderItemTypeID = 2,
-                    Products = new List<ProductModel>() {
-                        new ProductModel() { ProductID = 1 }
-                    }
+                    Products = { 1 }
                 }
             );
 
@@ -102,9 +100,7 @@ namespace LogStore.TestUnit.Validators
                 {
                     Description = "",
                     OrderItemTypeID = 2,
-                    Products = new List<ProductModel>() {
-                        new ProductModel() { ProductID = 1}
-                    }
+                    Products = { 1 }
                 }
             );
 

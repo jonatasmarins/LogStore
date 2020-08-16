@@ -14,11 +14,25 @@ namespace LogStore.TestUnit.Factories
             order.Value = 150;
             order.Items = new[] {
                 new OrderItem(1, 1, 1, "", 50, new[] {
-                    new Product() { Value = 50}
+                    new OrderSubItem() {
+                        ProductID = 1,
+                        OrderItemID = 1,
+                        Product = new Product() {ProductID = 1, Value = 50}
+                    }
                 }),
                 new OrderItem(1, 1, 1, "", 50, new[] {
-                    new Product() { Value = 50},
-                    new Product() { Value = 50}
+
+                    new OrderSubItem() {
+                        ProductID = 1,
+                        OrderItemID = 1,
+                        Product = new Product() {ProductID = 1, Value = 50}
+                    },
+
+                    new OrderSubItem() {
+                        ProductID = 2,
+                        OrderItemID = 1,
+                        Product = new Product() {ProductID = 2, Value = 50}
+                    }
                 })
             };
 

@@ -8,7 +8,6 @@ namespace LogStore.Data.Repositories
 {
     public class OrderItemTypeRepository : IOrderItemTypeRepository
     {
-        private bool disposed = false;
         private readonly DataContext _dataContext;
 
         public OrderItemTypeRepository(DataContext dataContext)

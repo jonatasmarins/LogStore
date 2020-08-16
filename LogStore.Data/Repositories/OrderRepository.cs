@@ -12,12 +12,10 @@ namespace LogStore.Data.Repositories
         {
             _context = context;
         }
-        public async Task<Order> Add(Order order)
+        public Task<Order> Add(Order order)
         {
             _context.Orders.Add(order);
-            await _context.SaveChangesAsync();
-
-            return order;
+            return Task.FromResult(order);
         }
     }
 }

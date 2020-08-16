@@ -14,6 +14,7 @@ namespace LogStore.Data.Configuration
         public static void Config(this IServiceCollection services, IConfiguration configuration)
         { 
             services.AddTransient<IOrderRepository, OrderRepository>();
+            services.AddTransient<IOrderItemRepository, OrderItemRepository>();
             services.AddTransient<IOrderItemTypeRepository, OrderItemTypeRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
 

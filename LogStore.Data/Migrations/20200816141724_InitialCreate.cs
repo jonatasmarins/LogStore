@@ -13,6 +13,7 @@ namespace LogStore.Data.Migrations
                 {
                     OrderID = table.Column<long>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    Value = table.Column<decimal>(nullable: false),
                     CreateDate = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
@@ -37,21 +38,37 @@ namespace LogStore.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Product",
+                columns: table => new
+                {
+                    ProductID = table.Column<long>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(nullable: false),
+                    Description = table.Column<string>(nullable: true),
+                    Value = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Product", x => x.ProductID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "OrderItem",
                 columns: table => new
                 {
                     OrderItemID = table.Column<long>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Description = table.Column<string>(nullable: true),
+                    Value = table.Column<decimal>(nullable: false),
                     OrderItemTypeID = table.Column<long>(nullable: false),
-                    OrderId = table.Column<long>(nullable: false)
+                    OrderID = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OrderItem", x => x.OrderItemID);
                     table.ForeignKey(
-                        name: "FK_OrderItem_Order_OrderId",
-                        column: x => x.OrderId,
+                        name: "FK_OrderItem_Order_OrderID",
+                        column: x => x.OrderID,
                         principalTable: "Order",
                         principalColumn: "OrderID",
                         onDelete: ReferentialAction.Cascade);
@@ -64,25 +81,29 @@ namespace LogStore.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Product",
+                name: "OrderSubItem",
                 columns: table => new
                 {
-                    ProductID = table.Column<long>(nullable: false)
+                    OrderSubItemID = table.Column<long>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Name = table.Column<string>(nullable: false),
-                    Description = table.Column<string>(nullable: true),
-                    Value = table.Column<decimal>(nullable: false),
-                    OrderItemID = table.Column<long>(nullable: true)
+                    OrderItemID = table.Column<long>(nullable: false),
+                    ProductID = table.Column<long>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Product", x => x.ProductID);
+                    table.PrimaryKey("PK_OrderSubItem", x => x.OrderSubItemID);
                     table.ForeignKey(
-                        name: "FK_Product_OrderItem_OrderItemID",
+                        name: "FK_OrderSubItem_OrderItem_OrderItemID",
                         column: x => x.OrderItemID,
                         principalTable: "OrderItem",
                         principalColumn: "OrderItemID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_OrderSubItem_Product_ProductID",
+                        column: x => x.ProductID,
+                        principalTable: "Product",
+                        principalColumn: "ProductID",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.InsertData(
@@ -107,43 +128,43 @@ namespace LogStore.Data.Migrations
 
             migrationBuilder.InsertData(
                 table: "Product",
-                columns: new[] { "ProductID", "Description", "Name", "OrderItemID", "Value" },
-                values: new object[] { 1L, "Molho de tomate coberto por três tipo de queijo", "3 Queijos", null, 50m });
+                columns: new[] { "ProductID", "Description", "Name", "Value" },
+                values: new object[] { 1L, "Molho de tomate coberto por três tipo de queijo", "3 Queijos", 50m });
 
             migrationBuilder.InsertData(
                 table: "Product",
-                columns: new[] { "ProductID", "Description", "Name", "OrderItemID", "Value" },
-                values: new object[] { 2L, "Molho de tomate coberto de frango com requeijão", "Frango com Requeijão", null, 59.99m });
+                columns: new[] { "ProductID", "Description", "Name", "Value" },
+                values: new object[] { 2L, "Molho de tomate coberto de frango com requeijão", "Frango com Requeijão", 59.99m });
 
             migrationBuilder.InsertData(
                 table: "Product",
-                columns: new[] { "ProductID", "Description", "Name", "OrderItemID", "Value" },
-                values: new object[] { 3L, "Molho de tomate coberto por queijo mussarela", "Mussarela", null, 42.50m });
+                columns: new[] { "ProductID", "Description", "Name", "Value" },
+                values: new object[] { 3L, "Molho de tomate coberto por queijo mussarela", "Mussarela", 42.50m });
 
             migrationBuilder.InsertData(
                 table: "Product",
-                columns: new[] { "ProductID", "Description", "Name", "OrderItemID", "Value" },
-                values: new object[] { 4L, "Molho de tomate coberto por calabresa e cebola", "Calabresa", null, 42.50m });
+                columns: new[] { "ProductID", "Description", "Name", "Value" },
+                values: new object[] { 4L, "Molho de tomate coberto por calabresa e cebola", "Calabresa", 42.50m });
 
             migrationBuilder.InsertData(
                 table: "Product",
-                columns: new[] { "ProductID", "Description", "Name", "OrderItemID", "Value" },
-                values: new object[] { 5L, "Molho de tomate coberto por pepperoni", "Pepperoni", null, 55m });
+                columns: new[] { "ProductID", "Description", "Name", "Value" },
+                values: new object[] { 5L, "Molho de tomate coberto por pepperoni", "Pepperoni", 55m });
 
             migrationBuilder.InsertData(
                 table: "Product",
-                columns: new[] { "ProductID", "Description", "Name", "OrderItemID", "Value" },
-                values: new object[] { 6L, "Molho de tomate coberto por mussarela, pressunto, ovo e banco", "Portuguesa ", null, 45m });
+                columns: new[] { "ProductID", "Description", "Name", "Value" },
+                values: new object[] { 6L, "Molho de tomate coberto por mussarela, pressunto, ovo e banco", "Portuguesa ", 45m });
 
             migrationBuilder.InsertData(
                 table: "Product",
-                columns: new[] { "ProductID", "Description", "Name", "OrderItemID", "Value" },
-                values: new object[] { 7L, "Molho de tomate coberto por mussarela, Tomate e ervilha", "Veggie  ", null, 59.99m });
+                columns: new[] { "ProductID", "Description", "Name", "Value" },
+                values: new object[] { 7L, "Molho de tomate coberto por mussarela, Tomate e ervilha", "Veggie  ", 59.99m });
 
             migrationBuilder.CreateIndex(
-                name: "IX_OrderItem_OrderId",
+                name: "IX_OrderItem_OrderID",
                 table: "OrderItem",
-                column: "OrderId");
+                column: "OrderID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrderItem_OrderItemTypeID",
@@ -151,18 +172,26 @@ namespace LogStore.Data.Migrations
                 column: "OrderItemTypeID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Product_OrderItemID",
-                table: "Product",
+                name: "IX_OrderSubItem_OrderItemID",
+                table: "OrderSubItem",
                 column: "OrderItemID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrderSubItem_ProductID",
+                table: "OrderSubItem",
+                column: "ProductID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Product");
+                name: "OrderSubItem");
 
             migrationBuilder.DropTable(
                 name: "OrderItem");
+
+            migrationBuilder.DropTable(
+                name: "Product");
 
             migrationBuilder.DropTable(
                 name: "Order");

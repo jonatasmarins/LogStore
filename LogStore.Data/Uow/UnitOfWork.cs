@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks;
 using LogStore.Data.Context;
 using LogStore.Data.Repositories;
 using LogStore.Domain.Repositories;
@@ -32,6 +33,14 @@ namespace LogStore.Data.Uow
             }
         }
 
+        public IOrderItemRepository OrderItemRepository
+        {
+            get
+            {
+                return new OrderItemRepository(context);
+            }
+        }
+
         public IProductRepository ProductRepository
         {
             get
@@ -56,6 +65,11 @@ namespace LogStore.Data.Uow
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+        }
+
+        public async Task<int> SaveChange()
+        {
+            return await context.SaveChangesAsync();
         }
     }
 }

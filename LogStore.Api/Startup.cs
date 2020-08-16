@@ -34,12 +34,7 @@ namespace LogStore.Api
                 {
                     Version = "v1",
                     Title = "LogStore API",
-                    Description = "Example API",
-                    Contact = new Microsoft.OpenApi.Models.OpenApiContact
-                    {
-                        Name = "Jônatas Marins",
-                        Url = new Uri("https://github.com/jonatasmarins")
-                    }
+                    Description = "Example API"
                 });
             });
             
@@ -61,6 +56,8 @@ namespace LogStore.Api
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseSwagger();
 
             app.UseSwaggerUI(s =>
             {

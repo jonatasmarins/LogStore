@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LogStore.Api.Controllers
 {
+    [ApiController]
+    [Route("v1/[controller]")]
     public class OrderController : BaseController
     {
         private readonly IMediator _mediator;
@@ -26,7 +28,7 @@ namespace LogStore.Api.Controllers
                 return BadRequest(response.Errors);
             }
 
-            return Ok(response.Value);
+            return Response(response);
         }
     }
 }

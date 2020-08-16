@@ -6,11 +6,11 @@ namespace LogStore.Domain.Models
     {
         public OrderItemModel()
         {
-            Products = new List<ProductModel>();
+            Products = new List<long>();
         }
 
         public long OrderItemTypeID { get; set; }
         public string Description { get; set; }
-        public IList<ProductModel> Products { get; set; }
+        public IList<long> Products { get; set; }
     }
 }

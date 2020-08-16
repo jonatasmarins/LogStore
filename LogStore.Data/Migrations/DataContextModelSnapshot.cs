@@ -25,6 +25,9 @@ namespace LogStore.Data.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<decimal>("Value")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("OrderID");
 
                     b.ToTable("Order");
@@ -39,15 +42,18 @@ namespace LogStore.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.Property<long>("OrderId")
+                    b.Property<long>("OrderID")
                         .HasColumnType("INTEGER");
 
                     b.Property<long>("OrderItemTypeID")
                         .HasColumnType("INTEGER");
 
+                    b.Property<decimal>("Value")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("OrderItemID");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("OrderID");
 
                     b.HasIndex("OrderItemTypeID");
 
@@ -107,6 +113,27 @@ namespace LogStore.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderSubItem", b =>
+                {
+                    b.Property<long>("OrderSubItemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("OrderItemID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("ProductID")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("OrderSubItemID");
+
+                    b.HasIndex("OrderItemID");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("OrderSubItem");
+                });
+
             modelBuilder.Entity("LogStore.Domain.Entities.Product", b =>
                 {
                     b.Property<long>("ProductID")
@@ -120,15 +147,10 @@ namespace LogStore.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<long?>("OrderItemID")
-                        .HasColumnType("INTEGER");
-
                     b.Property<decimal>("Value")
                         .HasColumnType("TEXT");
 
                     b.HasKey("ProductID");
-
-                    b.HasIndex("OrderItemID");
 
                     b.ToTable("Product");
 
@@ -188,7 +210,7 @@ namespace LogStore.Data.Migrations
                 {
                     b.HasOne("LogStore.Domain.Entities.Order", "Order")
                         .WithMany("Items")
-                        .HasForeignKey("OrderId")
+                        .HasForeignKey("OrderID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -199,11 +221,19 @@ namespace LogStore.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("LogStore.Domain.Entities.Product", b =>
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderSubItem", b =>
                 {
-                    b.HasOne("LogStore.Domain.Entities.OrderItem", null)
+                    b.HasOne("LogStore.Domain.Entities.OrderItem", "OrderItem")
                         .WithMany("Products")
-                        .HasForeignKey("OrderItemID");
+                        .HasForeignKey("OrderItemID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LogStore.Domain.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

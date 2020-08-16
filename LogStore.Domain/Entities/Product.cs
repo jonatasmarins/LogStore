@@ -10,7 +10,9 @@ namespace LogStore.Domain.Entities
             Value = value;
         }
 
-        public Product(long productID) { }
+        public Product(long productID) { 
+            ProductID = productID;
+        }
 
         public Product() { }
 

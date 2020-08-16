@@ -1,9 +1,9 @@
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\bin\Debug\netcoreapp3.1\Logstore.Domain.deps.json
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\bin\Debug\netcoreapp3.1\Logstore.Domain.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\bin\Debug\netcoreapp3.1\Logstore.Domain.pdb
-C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\Logstore.Domain.csprojAssemblyReference.cache
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\Logstore.Domain.AssemblyInfoInputs.cache
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\Logstore.Domain.AssemblyInfo.cs
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\Logstore.Domain.csproj.CoreCompileInputs.cache
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\Logstore.Domain.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\Logstore.Domain.pdb
+C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\LogStore.Domain.csprojAssemblyReference.cache

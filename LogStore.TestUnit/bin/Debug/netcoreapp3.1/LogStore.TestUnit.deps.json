@@ -6,17 +6,17 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "LogStore.TestUnit/1.0.0": {
+      "Logstore.TestUnit/1.0.0": {
         "dependencies": {
-          "Logstore.Data": "1.0.0",
-          "Logstore.Domain": "1.0.0",
+          "LogStore.Data": "1.0.0",
+          "LogStore.Domain": "1.0.0",
           "Microsoft.NET.Test.Sdk": "16.7.0",
           "Moq": "4.14.5",
           "xunit": "2.4.1",
           "xunit.runner.visualstudio": "2.4.3"
         },
         "runtime": {
-          "LogStore.TestUnit.dll": {}
+          "Logstore.TestUnit.dll": {}
         }
       },
       "Castle.Core/4.4.0": {
@@ -1551,30 +1551,30 @@
         }
       },
       "xunit.runner.visualstudio/2.4.3": {},
-      "Logstore.Data/1.0.0": {
+      "LogStore.Data/1.0.0": {
         "dependencies": {
-          "Logstore.Domain": "1.0.0",
+          "LogStore.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "3.1.7",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.7",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.7"
         },
         "runtime": {
-          "Logstore.Data.dll": {}
+          "LogStore.Data.dll": {}
         }
       },
-      "Logstore.Domain/1.0.0": {
+      "LogStore.Domain/1.0.0": {
         "dependencies": {
           "FluentValidation": "9.1.2",
           "MediatR": "8.1.0"
         },
         "runtime": {
-          "Logstore.Domain.dll": {}
+          "LogStore.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "LogStore.TestUnit/1.0.0": {
+    "Logstore.TestUnit/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -2510,12 +2510,12 @@
       "path": "xunit.runner.visualstudio/2.4.3",
       "hashPath": "xunit.runner.visualstudio.2.4.3.nupkg.sha512"
     },
-    "Logstore.Data/1.0.0": {
+    "LogStore.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "Logstore.Domain/1.0.0": {
+    "LogStore.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
