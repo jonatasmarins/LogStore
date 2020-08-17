@@ -18,6 +18,19 @@ namespace LogStore.Api.Controllers
             _mediator = mediator;
         }
 
+        [HttpGet("/Order")]
+        public async Task<IActionResult> Get([FromQuery]GetOrdersCommand command)
+        {
+            var response = await _mediator.Send(command);
+            
+            if (response.Errors.Any())
+            {
+                return BadRequest(response.Errors);
+            }
+
+            return Response(response);
+        }
+
         [HttpPost("/Order")]
         public async Task<IActionResult> Add([FromBody] AddOrderCommand command)
         {
@@ -32,7 +45,7 @@ namespace LogStore.Api.Controllers
         }
 
         [HttpPost("/Order/WihtOutUser")]
-        public async Task<IActionResult> Add([FromBody] AddOrderWithOutUserCommand command)
+        public async Task<IActionResult> AddWithOutUser([FromBody] AddOrderWithOutUserCommand command)
         {
             var response = await _mediator.Send(command);
             
