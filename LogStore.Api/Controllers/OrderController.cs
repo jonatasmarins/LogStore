@@ -31,6 +31,19 @@ namespace LogStore.Api.Controllers
             return Response(response);
         }
 
+        [HttpGet("/Order/WihtOutUser")]
+        public async Task<IActionResult> GetWithOutUser([FromQuery]GetOrdersWithOutUserCommand command)
+        {
+            var response = await _mediator.Send(command);
+            
+            if (response.Errors.Any())
+            {
+                return BadRequest(response.Errors);
+            }
+
+            return Response(response);
+        }
+
         [HttpPost("/Order")]
         public async Task<IActionResult> Add([FromBody] AddOrderCommand command)
         {

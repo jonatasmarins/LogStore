@@ -12,7 +12,7 @@ using MediatR;
 
 namespace LogStore.Domain.Handlers
 {
-    public class AddOrderHandler : IRequestHandler<AddOrderCommand, IResultResponse<AddOrderResponse>>
+    public class AddOrderHandler : IRequestHandler<AddOrderCommand, IResultResponse>
     {
         private readonly IUnitOfWork _uow;
         private readonly IOrderService _orderService;
@@ -35,9 +35,9 @@ namespace LogStore.Domain.Handlers
             _orderUserService = orderUserService;
         }
 
-        public async Task<IResultResponse<AddOrderResponse>> Handle(AddOrderCommand request, CancellationToken cancellationToken)
+        public async Task<IResultResponse> Handle(AddOrderCommand request, CancellationToken cancellationToken)
         {
-            ResultResponse<AddOrderResponse> result = new ResultResponse<AddOrderResponse>();
+            ResultResponse result = new ResultResponse();
 
             var validator = await new AddOrderCommandValidator(_uow).ValidateAsync(request);
 
@@ -59,8 +59,6 @@ namespace LogStore.Domain.Handlers
             await _uow.SaveChange();
 
             await _orderUserService.Add(order.OrderID, request.UserID);
-
-            result.Value = null;
 
             return result;
         } 

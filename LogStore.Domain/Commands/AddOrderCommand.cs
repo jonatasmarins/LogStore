@@ -8,7 +8,7 @@ using MediatR;
 
 namespace LogStore.Domain.Commands
 {
-    public class AddOrderCommand : IRequest<IResultResponse<AddOrderResponse>>
+    public class AddOrderCommand : IRequest<IResultResponse>
     {
         public AddOrderCommand()
         {

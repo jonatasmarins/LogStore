@@ -1,7 +1,9 @@
+using System.Linq;
 using System.Threading.Tasks;
 using LogStore.Data.Context;
 using LogStore.Domain.Entities;
 using LogStore.Domain.Repositories;
+using Microsoft.EntityFrameworkCore;
 
 namespace LogStore.Data.Repositories
 {
@@ -19,6 +21,11 @@ namespace LogStore.Data.Repositories
             await _dataContext.AddAsync(entity);
 
             return entity;
+        }
+
+        public async Task<OrderAddress> GetByAddressId(long addressID)
+        {
+            return await _dataContext.OrderAddresses.Where(x => x.AddressID == addressID).FirstOrDefaultAsync();
         }
     }
 }

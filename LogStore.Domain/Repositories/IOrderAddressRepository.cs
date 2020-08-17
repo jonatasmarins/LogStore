@@ -6,5 +6,6 @@ namespace LogStore.Domain.Repositories
     public interface IOrderAddressRepository
     {
         Task<OrderAddress> Add(OrderAddress entity);
+        Task<OrderAddress> GetByAddressId(long addressID);
     }
 }

@@ -11,7 +11,7 @@ using MediatR;
 
 namespace LogStore.Domain.Handlers
 {
-    public class AddOrderWithOutUserHandler: IRequestHandler<AddOrderWithOutUserCommand, IResultResponse<AddOrderWithOutUserResponse>>
+    public class AddOrderWithOutUserHandler: IRequestHandler<AddOrderWithOutUserCommand, IResultResponse>
     {
         private readonly IUnitOfWork _uow;
         private readonly IOrderService _orderService;
@@ -37,9 +37,9 @@ namespace LogStore.Domain.Handlers
             _orderaddressService = orderaddressService;
         }
         
-        public async Task<IResultResponse<AddOrderWithOutUserResponse>> Handle(AddOrderWithOutUserCommand request, CancellationToken cancellationToken)
+        public async Task<IResultResponse> Handle(AddOrderWithOutUserCommand request, CancellationToken cancellationToken)
         {
-            ResultResponse<AddOrderWithOutUserResponse> result = new ResultResponse<AddOrderWithOutUserResponse>();
+            ResultResponse result = new ResultResponse();
 
             var validator = await new AddOrderWithOutUserCommandValidator(_uow).ValidateAsync(request);
 
@@ -63,8 +63,6 @@ namespace LogStore.Domain.Handlers
             var address = await _addressService.Add(request.Street, request.City, request.Number, request.Neighborhood);
             
             await _orderaddressService.Add(order.OrderID, address.AddressID);
-
-            result.Value = null;
 
             return result;
         }

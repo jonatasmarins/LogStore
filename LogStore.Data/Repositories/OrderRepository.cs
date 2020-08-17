@@ -21,6 +21,24 @@ namespace LogStore.Data.Repositories
             return Task.FromResult(order);
         }
 
+        public async Task<IList<Order>> GetByAddressId(long addressID)
+        {
+            var result = _context.Orders
+                .Include(x => x.Items)
+                    .ThenInclude(item => item.OrderItemType)
+                .Include(x => x.Items)
+                    .ThenInclude(item => item.Products) 
+                    .ThenInclude(prod => prod.Product)               
+                .Join(_context.OrderAddresses,
+                    order => order.OrderID,
+                    orderAddress => orderAddress.OrderID,
+                    (order, orderAddress) => new { Order = order, OrderAddress = orderAddress })
+                .Where(x => x.OrderAddress.AddressID == addressID)
+                .Select(x => x.Order);
+
+            return await result.ToListAsync();
+        }
+
         public async Task<Order> GetById(long orderID)
         {
             return await _context.Orders.Where(x => x.OrderID == orderID).Include(x => x.Items).FirstOrDefaultAsync();

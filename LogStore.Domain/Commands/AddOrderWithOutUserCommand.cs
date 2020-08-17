@@ -7,7 +7,7 @@ using MediatR;
 
 namespace LogStore.Domain.Commands
 {
-    public class AddOrderWithOutUserCommand: IRequest<IResultResponse<AddOrderWithOutUserResponse>>
+    public class AddOrderWithOutUserCommand: IRequest<IResultResponse>
     {
         public AddOrderWithOutUserCommand()
         {

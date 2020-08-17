@@ -11,5 +11,6 @@ namespace LogStore.Domain.Repositories
         Task<Order> GetById(long orderID);
 
         Task<IList<Order>> GetByUserId(long userID);
+        Task<IList<Order>> GetByAddressId(long userID);
     }
 }
