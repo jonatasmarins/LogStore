@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using LogStore.Domain.Commands;
 using LogStore.Domain.Repositories.Uow;
+using LogStore.Domain.Validators.Properties;
 
 namespace LogStore.Domain.Validators
 {
@@ -20,7 +21,9 @@ namespace LogStore.Domain.Validators
 
             CascadeMode = CascadeMode.Stop;
 
-            RuleFor(x => x.UserID).NotEmpty().WithMessage(MessageUserIdIsRequried);
+            RuleFor(x => x.UserID)
+                .NotNull().WithMessage(MessageUserIdIsRequried)
+                .SetValidator(new UserIDPropertyValidator(_unitOfWork));
 
             RuleFor(x => x.OrderItems.Count)
                     .GreaterThan(0).WithMessage(MessageLessOneItem)

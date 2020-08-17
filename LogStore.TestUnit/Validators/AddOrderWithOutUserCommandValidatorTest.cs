@@ -118,6 +118,10 @@ namespace LogStore.TestUnit.Validators
             _uow.Setup(x => x.OrderItemTypeRepository.IsQuantityProductValid(It.IsAny<long>(), It.IsAny<int>())).ReturnsAsync(true);
 
             AddOrderWithOutUserCommand command = new AddOrderWithOutUserCommand();
+            command.City = "São Paulo";
+            command.Neighborhood = "Maria Madalena";
+            command.Number = 150;
+            command.Street = "R. Girassol";
             command.OrderItems.Add(
                 new OrderItemModel()
                 {

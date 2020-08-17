@@ -6,6 +6,7 @@ using LogStore.Domain.Entities;
 using LogStore.Domain.Models.Response;
 using LogStore.Domain.Repositories.Uow;
 using LogStore.Domain.Shared;
+using LogStore.Domain.Validators.Properties;
 using MediatR;
 
 namespace LogStore.Domain.Handlers
@@ -21,8 +22,13 @@ namespace LogStore.Domain.Handlers
         public async Task<IResultResponse<List<GetOrdersResponse>>> Handle(GetOrdersCommand request, CancellationToken cancellationToken)
         {
             IResultResponse<List<GetOrdersResponse>> result = new ResultResponse<List<GetOrdersResponse>>();
+            var validator = await new UserIDPropertyValidator(_uow).ValidateAsync(request.UserID);
 
-            //adicionar validate - UserId not null e UserId Existe no banco
+            if (!validator.IsValid)
+            {
+                result.AddMessage(validator.Errors);
+                return result;
+            }
 
             var orders = await _uow.OrderRepository.GetByUserId(request.UserID);
             var user = await _uow.UserRepository.GetById(request.UserID);
@@ -35,6 +41,7 @@ namespace LogStore.Domain.Handlers
         private List<GetOrdersResponse> ConvertToModel(IList<Order> orders, User user)
         {
             List<GetOrdersResponse> listordersResponse = new List<GetOrdersResponse>();
+            
             //transformar em Mapper
 
             foreach (var item in orders)

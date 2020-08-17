@@ -4,6 +4,7 @@ using FluentValidation.Validators;
 using LogStore.Domain.Commands;
 using LogStore.Domain.Entities;
 using LogStore.Domain.Repositories.Uow;
+using LogStore.Domain.Validators.Properties;
 
 namespace LogStore.Domain.Validators
 {

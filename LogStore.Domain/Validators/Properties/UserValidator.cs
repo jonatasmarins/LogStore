@@ -1,7 +1,7 @@
 using FluentValidation;
 using LogStore.Domain.Entities;
 
-namespace LogStore.Domain.Validators
+namespace LogStore.Domain.Validators.Properties
 {
     public class UserValidator: AbstractValidator<User>
     {

@@ -51,6 +51,7 @@ namespace LogStore.TestUnit.Handlers
             _uow.Setup(x => x.OrderItemTypeRepository.IsQuantityProductValid(It.IsAny<long>(), It.IsAny<int>())).ReturnsAsync(true);
             _uow.Setup(x => x.OrderRepository.Add(It.IsAny<Order>())).ReturnsAsync(OrderRepositoryFake.OrderValid());
             _uow.Setup(x => x.ProductRepository.GetProductById(It.IsAny<long>())).ReturnsAsync(ProductRepositoryFake.GetById());
+            _uow.Setup(x => x.UserRepository.GetById(It.IsAny<long>())).ReturnsAsync(new User());
             
             _orderService.Setup(x => x.AddOrder(It.IsAny<decimal>())).ReturnsAsync(OrderRepositoryFake.OrderValid());
             
