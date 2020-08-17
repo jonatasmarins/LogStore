@@ -6,15 +6,15 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "LogStore.Data/1.0.0": {
+      "Logstore.Data/1.0.0": {
         "dependencies": {
-          "LogStore.Domain": "1.0.0",
+          "Logstore.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "3.1.7",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.7",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.7"
         },
         "runtime": {
-          "LogStore.Data.dll": {}
+          "Logstore.Data.dll": {}
         }
       },
       "FluentValidation/9.1.2": {
@@ -405,7 +405,7 @@
           }
         }
       },
-      "LogStore.Domain/1.0.0": {
+      "Logstore.Domain/1.0.0": {
         "dependencies": {
           "FluentValidation": "9.1.2",
           "MediatR": "8.1.0",
@@ -413,13 +413,13 @@
           "Microsoft.Extensions.DependencyInjection": "3.1.7"
         },
         "runtime": {
-          "LogStore.Domain.dll": {}
+          "Logstore.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
-    "LogStore.Data/1.0.0": {
+    "Logstore.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -676,7 +676,7 @@
       "path": "system.text.json/4.7.1",
       "hashPath": "system.text.json.4.7.1.nupkg.sha512"
     },
-    "LogStore.Domain/1.0.0": {
+    "Logstore.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj": {}
+    "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj": {}
   },
   "projects": {
     "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\LogStore.Data.csproj": {
@@ -154,12 +154,12 @@
         }
       }
     },
-    "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj": {
+    "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj",
-        "projectName": "Logstore.TestUnit",
-        "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj",
+        "projectUniqueName": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj",
+        "projectName": "LogStore.TestUnit",
+        "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj",
         "packagesPath": "C:\\Users\\zupper\\.nuget\\packages\\",
         "outputPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\obj\\",
         "projectStyle": "PackageReference",

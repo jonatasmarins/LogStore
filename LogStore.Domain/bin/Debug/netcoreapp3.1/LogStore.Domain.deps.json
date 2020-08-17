@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "LogStore.Domain/1.0.0": {
+      "Logstore.Domain/1.0.0": {
         "dependencies": {
           "FluentValidation": "9.1.2",
           "MediatR": "8.1.0",
@@ -14,7 +14,7 @@
           "Microsoft.Extensions.DependencyInjection": "3.1.7"
         },
         "runtime": {
-          "LogStore.Domain.dll": {}
+          "Logstore.Domain.dll": {}
         }
       },
       "FluentValidation/9.1.2": {
@@ -85,7 +85,7 @@
     }
   },
   "libraries": {
-    "LogStore.Domain/1.0.0": {
+    "Logstore.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

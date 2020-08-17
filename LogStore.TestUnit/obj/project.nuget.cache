@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VygQvqaZaeMNwk8/egmg1W3CEaUY9qYDvcmaJYXG8hcmRzx3wL5amsKlstNIjMHIf7eejfi3tN0ZRUlB3dfWmg==",
+  "dgSpecHash": "obKBaO9F9cr3Mn2YigclfR+xfRCvWAF96Mg8TuLVrjWXffdM8Ocp/9R13O0nPaipOo0eOpFxE5ekIGP5VZVy5g==",
   "success": true,
-  "projectFilePath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj",
+  "projectFilePath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\zupper\\.nuget\\packages\\castle.core\\4.4.0\\castle.core.4.4.0.nupkg.sha512",
     "C:\\Users\\zupper\\.nuget\\packages\\fluentvalidation\\9.1.2\\fluentvalidation.9.1.2.nupkg.sha512",

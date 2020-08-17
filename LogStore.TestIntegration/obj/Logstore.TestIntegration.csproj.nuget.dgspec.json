@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\Logstore.TestIntegration.csproj": {}
+    "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\Logstore.TestIntegration.csproj": {}
   },
   "projects": {
-    "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\Logstore.TestIntegration.csproj": {
+    "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\Logstore.TestIntegration.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\Logstore.TestIntegration.csproj",
+        "projectUniqueName": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\Logstore.TestIntegration.csproj",
         "projectName": "Logstore.TestIntegration",
-        "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\Logstore.TestIntegration.csproj",
+        "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\Logstore.TestIntegration.csproj",
         "packagesPath": "C:\\Users\\zupper\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\obj\\",
+        "outputPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestIntegration\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -42,6 +42,40 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -53,6 +87,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
