@@ -1565,7 +1565,9 @@
       "Logstore.Domain/1.0.0": {
         "dependencies": {
           "FluentValidation": "9.1.2",
-          "MediatR": "8.1.0"
+          "MediatR": "8.1.0",
+          "Microsoft.Extensions.Configuration": "3.1.7",
+          "Microsoft.Extensions.DependencyInjection": "3.1.7"
         },
         "runtime": {
           "Logstore.Domain.dll": {}

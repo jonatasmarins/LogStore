@@ -3,8 +3,9 @@ using System.Threading.Tasks;
 using LogStore.Domain.Commands;
 using LogStore.Domain.Entities;
 using LogStore.Domain.Handlers;
-using LogStore.Domain.Models;
+using LogStore.Domain.Models.Request;
 using LogStore.Domain.Repositories.Uow;
+using LogStore.Domain.Services.Interfaces;
 using LogStore.Domain.Validators;
 using LogStore.TestUnit.Factories;
 using Moq;
@@ -19,13 +20,29 @@ namespace LogStore.TestUnit.Handlers
         private readonly Mock<IUnitOfWork> _uow;
         private readonly AddOrderCommandValidator _validator;
         private readonly AddOrderHandler _handler;
+        private readonly Mock<IOrderService> _orderService;
+        private readonly Mock<IOrderItemService> _orderItemService;
+        private readonly Mock<IProductService> _productService;
+        private readonly Mock<IOrderUserService> _orderUserService;
 
         public AddOrderHandlerTest(ITestOutputHelper output)
         {
             _output = output;
             _uow = new Mock<IUnitOfWork>();
             _validator = new AddOrderCommandValidator(_uow.Object);
-            _handler = new AddOrderHandler(_uow.Object);
+
+            _orderService = new Mock<IOrderService>();
+            _orderItemService = new Mock<IOrderItemService>();
+            _productService = new Mock<IProductService>();
+            _orderUserService = new Mock<IOrderUserService>();
+
+            _handler = new AddOrderHandler(
+                _uow.Object, 
+                _orderService.Object,
+                _orderItemService.Object,
+                _productService.Object,
+                _orderUserService.Object
+            );
         }
 
         [Fact]
@@ -34,15 +51,16 @@ namespace LogStore.TestUnit.Handlers
             _uow.Setup(x => x.OrderItemTypeRepository.IsQuantityProductValid(It.IsAny<long>(), It.IsAny<int>())).ReturnsAsync(true);
             _uow.Setup(x => x.OrderRepository.Add(It.IsAny<Order>())).ReturnsAsync(OrderRepositoryFake.OrderValid());
             _uow.Setup(x => x.ProductRepository.GetProductById(It.IsAny<long>())).ReturnsAsync(ProductRepositoryFake.GetById());
+            _uow.Setup(x => x.UserRepository.GetById(It.IsAny<long>())).ReturnsAsync(new User());
+            
+            _orderService.Setup(x => x.AddOrder(It.IsAny<decimal>())).ReturnsAsync(OrderRepositoryFake.OrderValid());
             
             AddOrderCommand command = new AddOrderCommand();
+            command.UserID = 1;
             command.OrderItems.Add(new OrderItemModel() {
                 Description = "",
                 OrderItemTypeID = 1,
-                Products = new[] {
-                    new ProductModel() { ProductID = 1 },
-                    new ProductModel() { ProductID = 1 }
-                }
+                Products = {1 , 2}
             });
 
             var result = await _handler.Handle(command, CancellationToken.None);

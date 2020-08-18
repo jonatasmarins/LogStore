@@ -13,7 +13,7 @@ namespace LogStore.Domain.Entities
             long orderItemTypeID,
             string description,
             decimal value,
-            IList<Product> products
+            IList<OrderSubItem> products
         )
         {
             OrderItemID = orderItemID;
@@ -21,6 +21,7 @@ namespace LogStore.Domain.Entities
             OrderItemTypeID = orderItemTypeID;
             Products = products;
             OrderID = orderID;
+            Value = value;
         }
 
         public OrderItem(
@@ -28,13 +29,14 @@ namespace LogStore.Domain.Entities
             long orderItemTypeID, 
             string description, 
             decimal value,
-            IList<Product> products
+            IList<OrderSubItem> products
         )
         {
             Description = description;
             OrderItemTypeID = orderItemTypeID;
             Products = products;
             OrderID = orderID;
+            Value = value;
         }
 
         public long OrderItemID { get; set; }
@@ -44,7 +46,7 @@ namespace LogStore.Domain.Entities
         public OrderItemType OrderItemType { get; set; }
         public long OrderItemTypeID { get; set; }
 
-        public IList<Product> Products { get; set; }
+        public IList<OrderSubItem> Products { get; set; }
 
         public Order Order { get; set; }
         public long OrderID { get; set; }

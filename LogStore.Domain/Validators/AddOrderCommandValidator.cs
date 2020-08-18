@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using FluentValidation;
 using LogStore.Domain.Commands;
 using LogStore.Domain.Repositories.Uow;
+using LogStore.Domain.Validators.Properties;
 
 namespace LogStore.Domain.Validators
 {
@@ -11,6 +12,7 @@ namespace LogStore.Domain.Validators
         public string MessageLessOneItem = "É obrigatório ao menos um item no Pedido";
         public string MessageMoreTenItem = $"A quantidade máxima é de {QTD_MAX_ITEM} itens por pedido";
         public string MessageQuantidadeProductRequired = "É obrigatório mais de um sabor";
+        public string MessageUserIdIsRequried = "É obrigatório informar o usuário";
 
         private readonly IUnitOfWork _unitOfWork;
         public AddOrderCommandValidator(IUnitOfWork unitOfWork)
@@ -18,6 +20,10 @@ namespace LogStore.Domain.Validators
             _unitOfWork = unitOfWork;
 
             CascadeMode = CascadeMode.Stop;
+
+            RuleFor(x => x.UserID)
+                .NotNull().WithMessage(MessageUserIdIsRequried)
+                .SetValidator(new UserIDPropertyValidator(_unitOfWork));
 
             RuleFor(x => x.OrderItems.Count)
                     .GreaterThan(0).WithMessage(MessageLessOneItem)

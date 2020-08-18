@@ -16,6 +16,47 @@ namespace LogStore.Data.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.7");
 
+            modelBuilder.Entity("LogStore.Domain.Entities.Address", b =>
+                {
+                    b.Property<long>("AddressID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("City")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Neighborhood")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Number")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Street")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("AddressID");
+
+                    b.ToTable("Address");
+
+                    b.HasData(
+                        new
+                        {
+                            AddressID = 1L,
+                            City = "Indaiatuba",
+                            Neighborhood = "Montreal",
+                            Number = 5000,
+                            Street = "Rua Monte Royal"
+                        },
+                        new
+                        {
+                            AddressID = 2L,
+                            City = "Campinas",
+                            Neighborhood = "Nova Veneza",
+                            Number = 3555,
+                            Street = "Rua Palmeiras"
+                        });
+                });
+
             modelBuilder.Entity("LogStore.Domain.Entities.Order", b =>
                 {
                     b.Property<long>("OrderID")
@@ -25,9 +66,33 @@ namespace LogStore.Data.Migrations
                     b.Property<DateTime>("CreateDate")
                         .HasColumnType("TEXT");
 
+                    b.Property<decimal>("Value")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("OrderID");
 
                     b.ToTable("Order");
+                });
+
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderAddress", b =>
+                {
+                    b.Property<long>("OrderAddressID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("AddressID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("OrderID")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("OrderAddressID");
+
+                    b.HasIndex("AddressID");
+
+                    b.HasIndex("OrderID");
+
+                    b.ToTable("OrderAddress");
                 });
 
             modelBuilder.Entity("LogStore.Domain.Entities.OrderItem", b =>
@@ -39,15 +104,18 @@ namespace LogStore.Data.Migrations
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
-                    b.Property<long>("OrderId")
+                    b.Property<long>("OrderID")
                         .HasColumnType("INTEGER");
 
                     b.Property<long>("OrderItemTypeID")
                         .HasColumnType("INTEGER");
 
+                    b.Property<decimal>("Value")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("OrderItemID");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("OrderID");
 
                     b.HasIndex("OrderItemTypeID");
 
@@ -107,6 +175,48 @@ namespace LogStore.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderSubItem", b =>
+                {
+                    b.Property<long>("OrderSubItemID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("OrderItemID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("ProductID")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("OrderSubItemID");
+
+                    b.HasIndex("OrderItemID");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("OrderSubItem");
+                });
+
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderUser", b =>
+                {
+                    b.Property<long>("OrderUserID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("OrderID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("UserID")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("OrderUserID");
+
+                    b.HasIndex("OrderID");
+
+                    b.HasIndex("UserID");
+
+                    b.ToTable("OrderUser");
+                });
+
             modelBuilder.Entity("LogStore.Domain.Entities.Product", b =>
                 {
                     b.Property<long>("ProductID")
@@ -120,15 +230,10 @@ namespace LogStore.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<long?>("OrderItemID")
-                        .HasColumnType("INTEGER");
-
                     b.Property<decimal>("Value")
                         .HasColumnType("TEXT");
 
                     b.HasKey("ProductID");
-
-                    b.HasIndex("OrderItemID");
 
                     b.ToTable("Product");
 
@@ -184,11 +289,76 @@ namespace LogStore.Data.Migrations
                         });
                 });
 
+            modelBuilder.Entity("LogStore.Domain.Entities.User", b =>
+                {
+                    b.Property<long>("UserID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<long>("AddressID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DateCreate")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("UserID");
+
+                    b.HasIndex("AddressID");
+
+                    b.ToTable("User");
+
+                    b.HasData(
+                        new
+                        {
+                            UserID = 1L,
+                            AddressID = 1L,
+                            DateCreate = new DateTime(2020, 8, 16, 18, 46, 4, 524, DateTimeKind.Local).AddTicks(6364),
+                            Email = "jose@aparecido.com",
+                            Name = "Jose Aparecido",
+                            Phone = "19996969999"
+                        },
+                        new
+                        {
+                            UserID = 2L,
+                            AddressID = 2L,
+                            DateCreate = new DateTime(2020, 8, 16, 18, 46, 4, 527, DateTimeKind.Local).AddTicks(3380),
+                            Email = "Maria@rita.com",
+                            Name = "Maria Rita",
+                            Phone = "19996969991"
+                        });
+                });
+
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderAddress", b =>
+                {
+                    b.HasOne("LogStore.Domain.Entities.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LogStore.Domain.Entities.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("LogStore.Domain.Entities.OrderItem", b =>
                 {
                     b.HasOne("LogStore.Domain.Entities.Order", "Order")
                         .WithMany("Items")
-                        .HasForeignKey("OrderId")
+                        .HasForeignKey("OrderID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -199,11 +369,43 @@ namespace LogStore.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("LogStore.Domain.Entities.Product", b =>
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderSubItem", b =>
                 {
-                    b.HasOne("LogStore.Domain.Entities.OrderItem", null)
+                    b.HasOne("LogStore.Domain.Entities.OrderItem", "OrderItem")
                         .WithMany("Products")
-                        .HasForeignKey("OrderItemID");
+                        .HasForeignKey("OrderItemID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LogStore.Domain.Entities.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LogStore.Domain.Entities.OrderUser", b =>
+                {
+                    b.HasOne("LogStore.Domain.Entities.Order", "Order")
+                        .WithMany()
+                        .HasForeignKey("OrderID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LogStore.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("LogStore.Domain.Entities.User", b =>
+                {
+                    b.HasOne("LogStore.Domain.Entities.Address", "Address")
+                        .WithMany()
+                        .HasForeignKey("AddressID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

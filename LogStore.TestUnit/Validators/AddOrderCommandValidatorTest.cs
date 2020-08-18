@@ -1,7 +1,6 @@
-using System.Collections.Generic;
 using LogStore.Domain.Commands;
-using LogStore.Domain.Models;
-using LogStore.Domain.Repositories;
+using LogStore.Domain.Entities;
+using LogStore.Domain.Models.Request;
 using LogStore.Domain.Repositories.Uow;
 using LogStore.Domain.Validators;
 using Moq;
@@ -69,9 +68,7 @@ namespace LogStore.TestUnit.Validators
                 {
                     Description = "",
                     OrderItemTypeID = 2,
-                    Products = new List<ProductModel>() {
-                        new ProductModel() { ProductID = 1 }
-                    }
+                    Products = { 1 }
                 }
             );
 
@@ -85,26 +82,20 @@ namespace LogStore.TestUnit.Validators
             Assert.False(result.IsValid);
         }
 
-        // [Fact]
-        // public void ItShouldSuccessWhenCalculateValueProducts()
-        // {
-        //     Assert.False(true);
-        // }
-
         [Fact]
         public void ItShouldSuccess()
         {
             _uow.Setup(x => x.OrderItemTypeRepository.IsQuantityProductValid(It.IsAny<long>(), It.IsAny<int>())).ReturnsAsync(true);
+            _uow.Setup(x => x.UserRepository.GetById(It.IsAny<long>())).ReturnsAsync(new User());
 
             AddOrderCommand command = new AddOrderCommand();
+            command.UserID = 1;
             command.OrderItems.Add(
                 new OrderItemModel()
                 {
                     Description = "",
                     OrderItemTypeID = 2,
-                    Products = new List<ProductModel>() {
-                        new ProductModel() { ProductID = 1}
-                    }
+                    Products = { 1 }
                 }
             );
 
