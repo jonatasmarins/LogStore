@@ -7,8 +7,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LogStore.Api.Controllers
 {
+    [Route("/v1/[controller]")]
     [ApiController]
-    [Route("v1/[controller]")]
     public class OrderController : BaseController
     {
         private readonly IMediator _mediator;
@@ -18,7 +18,8 @@ namespace LogStore.Api.Controllers
             _mediator = mediator;
         }
 
-        [HttpGet("/Order")]
+        [HttpGet]
+        [Route("/User")]
         public async Task<IActionResult> Get([FromQuery]GetOrdersCommand command)
         {
             var response = await _mediator.Send(command);
@@ -31,7 +32,7 @@ namespace LogStore.Api.Controllers
             return Response(response);
         }
 
-        [HttpGet("/Order/WihtOutUser")]
+        [HttpGet("/WithOutUser")]
         public async Task<IActionResult> GetWithOutUser([FromQuery]GetOrdersWithOutUserCommand command)
         {
             var response = await _mediator.Send(command);
@@ -44,7 +45,7 @@ namespace LogStore.Api.Controllers
             return Response(response);
         }
 
-        [HttpPost("/Order")]
+        [HttpPost("/User")]
         public async Task<IActionResult> Add([FromBody] AddOrderCommand command)
         {
             var response = await _mediator.Send(command);
@@ -57,7 +58,7 @@ namespace LogStore.Api.Controllers
             return Response(response);
         }
 
-        [HttpPost("/Order/WihtOutUser")]
+        [HttpPost("/WithOutUser")]
         public async Task<IActionResult> AddWithOutUser([FromBody] AddOrderWithOutUserCommand command)
         {
             var response = await _mediator.Send(command);

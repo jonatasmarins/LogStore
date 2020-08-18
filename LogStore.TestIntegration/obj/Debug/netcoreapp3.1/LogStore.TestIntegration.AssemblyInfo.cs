@@ -10,12 +10,15 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("Logstore.TestIntegration")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("LogStore.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Api", "LogStore.Api.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Logstore.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data", "Logstore.Data.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Logstore.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain", "Logstore.Domain.csproj", "0")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("LogStore.TestIntegration")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
-[assembly: System.Reflection.AssemblyProductAttribute("Logstore.TestIntegration")]
-[assembly: System.Reflection.AssemblyTitleAttribute("Logstore.TestIntegration")]
+[assembly: System.Reflection.AssemblyProductAttribute("LogStore.TestIntegration")]
+[assembly: System.Reflection.AssemblyTitleAttribute("LogStore.TestIntegration")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 
 // Gerado pela classe WriteCodeFragment do MSBuild.

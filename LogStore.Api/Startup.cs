@@ -56,10 +56,6 @@ namespace LogStore.Api
 
             app.UseHttpsRedirection();
 
-            app.UseRouting();
-
-            app.UseAuthorization();
-
             app.UseSwagger();
 
             app.UseSwaggerUI(s =>
@@ -67,6 +63,10 @@ namespace LogStore.Api
                 s.RoutePrefix = "swagger";
                 s.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Example");
             });
+
+            app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
