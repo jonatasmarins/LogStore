@@ -1,10 +1,10 @@
 # LogStore
-Criação de um WebAPI em .net Core
+  Criação de um WebAPI em .net Core
 
 # Descrição
-  Criação de um BackEnd para criar pedidos para uma pizzaria, podendo o usuário está cadastrado na base ou não.
+  Criação de um BackEnd para criar pedidos para uma pizzaria, podendo o usuário estar cadastrado na base ou não.
  
-# Metódos
+# Métodos
 - Get por código do usuário
 - Get por código do endereço 
 - Insert por usuário
@@ -34,8 +34,8 @@ Utilize os comandos abaixo para realizar a migração do Entity Framework
 
 1. dotnet ef database update --project LogStore.Data/LogStore.Data.csproj --startup-project LogStore.Api/LogStore.Api.csproj
 
-Ao realizar os testes de integração, verifique se os métodos de adicionar pedido com usuário e com endereço foi executado para um melhor proveito dos testes realizado via InlineData.
+Ao realizar os testes de integração, verifique se os métodos de adicionar pedido com usuário e com endereço foram executados para um melhor proveito dos testes, realizado via InlineData.
 
-<b>Projeto de Teste Integrado usa banco de dados em memória<b>
+<b>O projeto 'TestIntegration' utiliza banco de dados em memória<b>
   
-> Agradeço pela experiência :)
+> Obrigado pela experiência :)
