@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using System.Reflection;
 using LogStore.Data.Configuration;
 using LogStore.Data.Context;
 using LogStore.Domain.Commands;
@@ -10,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 
 namespace LogStore.Api
 {
@@ -29,18 +32,25 @@ namespace LogStore.Api
 
             DomainConfiguration.Config(services, Configuration);
 
+            services.AddHttpContextAccessor();
+
             services.AddMediatR(typeof(AddOrderCommand));
 
-            services.AddSwaggerGen(s =>
+            services.AddSwaggerGen(options =>
             {
-                s.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+                options.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
                 {
                     Version = "v1",
                     Title = "LogStore API",
-                    Description = "Example API"
+                    Description = "API to order of pizza",
+                    Contact = new OpenApiContact
+                    {
+                        Name = "Jonatas Marins",
+                        Email = "jonatasmarins_leitte@hotmail.com"
+                    }
                 });
             });
-            
+
             services.AddControllers();
         }
 
@@ -56,11 +66,13 @@ namespace LogStore.Api
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+            
             app.UseSwagger();
 
             app.UseSwaggerUI(s =>
             {
-                s.RoutePrefix = "swagger";
+                s.RoutePrefix = string.Empty;
                 s.SwaggerEndpoint("/swagger/v1/swagger.json", "Api Example");
             });
 

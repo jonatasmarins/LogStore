@@ -30,9 +30,6 @@ namespace LogStore.TestIntegration.Fixtures
                         });
                     });
                 });
-            
-            // var dataContext = (DataContext)appFactory.Services.GetService(typeof(DataContext));
-            // dataContext.Database.Migrate();
 
             Client = appFactory.CreateClient();
         }

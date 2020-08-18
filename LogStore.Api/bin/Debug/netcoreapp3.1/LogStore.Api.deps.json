@@ -857,10 +857,10 @@
           "Microsoft.EntityFrameworkCore.Tools": "3.1.7"
         },
         "runtime": {
-          "Logstore.Data.dll": {}
+          "LogStore.Data.dll": {}
         },
         "compile": {
-          "Logstore.Data.dll": {}
+          "LogStore.Data.dll": {}
         }
       },
       "LogStore.Domain/1.0.0": {
@@ -871,10 +871,10 @@
           "Microsoft.Extensions.DependencyInjection": "3.1.7"
         },
         "runtime": {
-          "Logstore.Domain.dll": {}
+          "LogStore.Domain.dll": {}
         },
         "compile": {
-          "Logstore.Domain.dll": {}
+          "LogStore.Domain.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {

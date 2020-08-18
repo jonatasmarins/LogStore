@@ -2222,23 +2222,23 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "LogStore.Data/1.0.0": {
+      "Logstore.Data/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "LogStore.Domain": "1.0.0",
+          "Logstore.Domain": "1.0.0",
           "Microsoft.EntityFrameworkCore.Design": "3.1.7",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.7",
           "Microsoft.EntityFrameworkCore.Tools": "3.1.7"
         },
         "compile": {
-          "bin/placeholder/LogStore.Data.dll": {}
+          "bin/placeholder/Logstore.Data.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LogStore.Data.dll": {}
+          "bin/placeholder/Logstore.Data.dll": {}
         }
       },
-      "LogStore.Domain/1.0.0": {
+      "Logstore.Domain/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
@@ -2248,10 +2248,10 @@
           "Microsoft.Extensions.DependencyInjection": "3.1.7"
         },
         "compile": {
-          "bin/placeholder/LogStore.Domain.dll": {}
+          "bin/placeholder/Logstore.Domain.dll": {}
         },
         "runtime": {
-          "bin/placeholder/LogStore.Domain.dll": {}
+          "bin/placeholder/Logstore.Domain.dll": {}
         }
       }
     }
@@ -7241,21 +7241,21 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "LogStore.Data/1.0.0": {
+    "Logstore.Data/1.0.0": {
       "type": "project",
-      "path": "../LogStore.Data/LogStore.Data.csproj",
-      "msbuildProject": "../LogStore.Data/LogStore.Data.csproj"
+      "path": "../LogStore.Data/Logstore.Data.csproj",
+      "msbuildProject": "../LogStore.Data/Logstore.Data.csproj"
     },
-    "LogStore.Domain/1.0.0": {
+    "Logstore.Domain/1.0.0": {
       "type": "project",
-      "path": "../LogStore.Domain/LogStore.Domain.csproj",
-      "msbuildProject": "../LogStore.Domain/LogStore.Domain.csproj"
+      "path": "../LogStore.Domain/Logstore.Domain.csproj",
+      "msbuildProject": "../LogStore.Domain/Logstore.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "LogStore.Data >= 1.0.0",
-      "LogStore.Domain >= 1.0.0",
+      "Logstore.Data >= 1.0.0",
+      "Logstore.Domain >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.7.0",
       "Moq >= 4.14.5",
       "xunit >= 2.4.1",
@@ -7270,11 +7270,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj",
-      "projectName": "Logstore.TestUnit",
-      "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj",
+      "projectUniqueName": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj",
+      "projectName": "LogStore.TestUnit",
+      "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj",
       "packagesPath": "C:\\Users\\zupper\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\obj\\",
+      "outputPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -7295,11 +7295,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\LogStore.Data.csproj": {
-              "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\LogStore.Data.csproj"
+            "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj": {
+              "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj"
             },
-            "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj": {
-              "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj"
+            "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj": {
+              "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj"
             }
           }
         }

@@ -6,4 +6,3 @@ C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\Logstore.Domain.csproj.CoreCompileInputs.cache
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\Logstore.Domain.dll
 C:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\Logstore.Domain.pdb
-c:\Users\zupper\Documents\Projects\LogStore\LogStore.Domain\obj\Debug\netcoreapp3.1\Logstore.Domain.csprojAssemblyReference.cache

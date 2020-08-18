@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj": {}
+    "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj": {}
   },
   "projects": {
-    "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\LogStore.Data.csproj": {
+    "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\LogStore.Data.csproj",
-        "projectName": "LogStore.Data",
-        "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\LogStore.Data.csproj",
+        "projectUniqueName": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj",
+        "projectName": "Logstore.Data",
+        "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj",
         "packagesPath": "C:\\Users\\zupper\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\obj\\",
+        "outputPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -32,8 +32,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj": {
-                "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj"
+              "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj": {
+                "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj": {
+    "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj",
-        "projectName": "LogStore.Domain",
-        "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj",
+        "projectName": "Logstore.Domain",
+        "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj",
         "packagesPath": "C:\\Users\\zupper\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\obj\\",
+        "outputPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -154,14 +154,14 @@
         }
       }
     },
-    "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj": {
+    "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj",
-        "projectName": "Logstore.TestUnit",
-        "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\Logstore.TestUnit.csproj",
+        "projectUniqueName": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj",
+        "projectName": "LogStore.TestUnit",
+        "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\LogStore.TestUnit.csproj",
         "packagesPath": "C:\\Users\\zupper\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\obj\\",
+        "outputPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.TestUnit\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -182,11 +182,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\LogStore.Data.csproj": {
-                "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\LogStore.Data.csproj"
+              "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj": {
+                "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Data\\Logstore.Data.csproj"
               },
-              "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj": {
-                "projectPath": "c:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\LogStore.Domain.csproj"
+              "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj": {
+                "projectPath": "C:\\Users\\zupper\\Documents\\Projects\\LogStore\\LogStore.Domain\\Logstore.Domain.csproj"
               }
             }
           }

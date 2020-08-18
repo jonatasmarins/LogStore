@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace LogStore.Api.Base
 {
-    public class BaseController : Controller
+    public class BaseController : ControllerBase
     {
         public BaseController()
         {
