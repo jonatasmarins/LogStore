@@ -37,5 +37,3 @@ Utilize os comandos abaixo para realizar a migração do Entity Framework
 Ao realizar os testes de integração, verifique se os métodos de adicionar pedido com usuário e com endereço foram executados para um melhor proveito dos testes, realizado via InlineData.
 
 <b>O projeto 'TestIntegration' utiliza banco de dados em memória<b>
-  
-> Obrigado pela experiência :)
